@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Made Recipes </title>
+</head>
+<body>
+
+      {% for recipe in recipes %}
+        {{ recipe.recipe_name}}<br>
+        {{ recipe.category_name}}<br>
+        {{ recipe.ingredients}}<br>
+        {{ recipe.method}}<br>
+        {{ recipe.cook_time}}<br>
+        {{ recipe.prep_time}}<br>
+        {{ recipe.tools_required}}<br>
+        {{ recipe.cuisine}}<br>
+        {{ recipe.customer_rating}}<br>
+        {{ recipe.customer_review}}<br>
+        {{ recipe.recipe_tip}}<br>
+        {{ recipe.serve}}<br>
+        {{ recipe.date_posted}}<br>
+      {% endfor %}
+
+</body>
+</html>
