@@ -9,19 +9,23 @@
 <body>
 
       {% for recipe in recipes %}
-        {{ recipe.recipe_name}}<br>
-        {{ recipe.category_name}}<br>
-        {{ recipe.ingredients}}<br>
-        {{ recipe.method}}<br>
-        {{ recipe.cook_time}}<br>
-        {{ recipe.prep_time}}<br>
-        {{ recipe.tools_required}}<br>
-        {{ recipe.cuisine}}<br>
-        {{ recipe.customer_rating}}<br>
-        {{ recipe.customer_review}}<br>
-        {{ recipe.recipe_tip}}<br>
-        {{ recipe.serve}}<br>
-        {{ recipe.date_posted}}<br>
+        {{ recipe.recipe_name }}<br>
+        {{ recipe.category_name }}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
+        {{ recipe.cook_time }}<br>
+        {{ recipe.prep_time }}<br>
+        {{ recipe.tools_required }}<br>
+        {{ recipe.cuisine }}<br>
+        {{ recipe.customer_rating }}<br>
+        {{ recipe.customer_review }}<br>
+        {{ recipe.recipe_tip }}<br>
+        {{ recipe.serve }}<br>
+        {{ recipe.date_posted }}<br>
+        <div>
+          <img src="{{ recipe.image_source }}" alt="curry image">
+        </div>
+        <br>
       {% endfor %}
 
 </body>
