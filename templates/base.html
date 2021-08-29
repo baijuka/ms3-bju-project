@@ -22,7 +22,7 @@
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                 {% if session.user %}    
-					<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+					<li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
 					<li><a href="#">Add Recipes</a></li>
 					<li><a href="#">Recipe Categories</a></li>
 					<li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -38,7 +38,7 @@
             <li><h4 class="center-align blue-grey-text text-darken-4">Cookerish</h4></li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}    
-					<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+					<li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
 					<li><a href="#">Add Recipes</a></li>
 					<li><a href="#">Recipe Categories</a></li>
 					<li><a href="{{ url_for('logout') }}">Log Out</a></li>
