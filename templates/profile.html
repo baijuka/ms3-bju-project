@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
+            <div class="card-panel light-blue-text text-darken-4">
                 <h3 class="center-align light-blue-text text-darken-4">
                     {{ user.username }}'s Profile
                 </h3>
@@ -15,9 +15,80 @@
                 <p><span style="font-weight: bold;">Address Line-2: </span>{{ user.address_line_2 }}</p>
                 <p><span style="font-weight: bold;">Town: {{ user.town }} </span></p>
                 <p><span style="font-weight: bold;">Postcode: {{ user.postcode }} </span></p>
-
+            </div>
+        </div>
+    </div>         
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <div class="light-blue-text text-darken-4">
+                    {% for recipe in user_recipe %}
+                        <div class="container">
+                            <div class="row">
+                            <div class="col-12"><h4>{{ recipe.recipe_name }}</h4><br>
+                            </div>
+                            <div class="row">
+                                <div class="col-6"> <img src="{{ recipe.image_source }}" alt="curry image">
+                                </div>
+                                <div class="col-6">
+                                    <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
+                                    <p><span style="font-weight: bold;">Preparation time: </span> {{ recipe.cook_time }}</p>
+                                    <p><span style="font-weight: bold;">Cooking time:</span> {{ recipe.prep_time }}</p>
+                                    <p><span style="font-weight: bold;">Cuisine:</span> {{ recipe.cuisine }}</p>
+                                    <p><span style="font-weight: bold;">Serve:</span> {{ recipe.serve }} people</p>
+                                </div>
+                            </div>                        
+                            </div>
+                        </div>
+                        <p><span style="font-weight: bold;">Tools required:</span> 
+                            <ul>
+                                {% for tool in recipe.tools_required %} 
+                                    <li class="list">{{  tool }}</li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                        
+                        <!-- bootstrap -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <p><span style="font-weight: bold;">Ingredients:</span></p>
+                                            <ul>
+                                                {% for item in recipe.ingredients %}
+                                                    <li class="list">{{ item }}</li>
+                                                {% endfor %}
+                                            </ul> 
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p><span style="font-weight: bold;">Method:</span></p>
+                                        <ol>
+                                            {% for step in recipe.method %}
+                                                <li>
+                                                    {{ step }}
+                                                </li> <br>
+                                            {% endfor %}
+                                        </ol>  
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        <!-- bootstrap end -->
+                        <p><span style="font-weight: bold;">Rating:</span> {{ recipe.customer_rating }}</p>
+                        <p><span style="font-weight: bold;">Review:</span> {{ recipe.customer_review }}</p>
+                        <p><span style="font-weight: bold;">Tip: </span>{{ recipe.recipe_tip }}</p>   
+                        <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime("%d %B, %Y") }}</p>
+                        <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
+                        <br> 
+                    {% endfor %}  
+                </div>
             </div>
         </div>
     </div>
+
 
 {% endblock %}

@@ -6,7 +6,9 @@
     <p><span style="font-weight: bold;">Ingredients:</span></p>
     <ul>
       {% for item in recipe.ingredients %}
-        <li>{{ item }}</li><br>
+        <li class="list">
+          {{ item }}
+        </li>
       {% endfor %}
     </ul>
     
@@ -23,7 +25,7 @@
     <p><span style="font-weight: bold;">Tools required:</span> 
       <ul>
         {% for tool in recipe.tools_required %} 
-          <li>{{  tool }}</li>
+          <li class="list">{{  tool }}</li>
       {% endfor %}
       </ul>
     </p> 

@@ -9,3 +9,12 @@ body {
 .flashes h4 {
     line-height: 2;
 }
+
+ul li.list {
+    margin-left: 35px;
+    list-style-type:disc;
+}
+
+ul li a {
+    text-decoration: none;
+}

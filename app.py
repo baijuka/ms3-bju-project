@@ -81,7 +81,11 @@ def profile(user):
   
   user = mongo.db.users.find_one(
       {"username": session["user"]})
-  return render_template("profile.html", user=user)
+  user_recipe = mongo.db.recipes.find(
+      {"created_by": session["user"]})
+ # if user_recipe:
+ #    return "hello"
+  return render_template("profile.html", user=user, user_recipe=user_recipe)
 
 
 if __name__ == "__main__":
