@@ -1,32 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Made Recipes </title>
-</head>
-<body>
-
-      {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-        {{ recipe.cook_time }}<br>
-        {{ recipe.prep_time }}<br>
-        {{ recipe.tools_required }}<br>
-        {{ recipe.cuisine }}<br>
-        {{ recipe.customer_rating }}<br>
-        {{ recipe.customer_review }}<br>
-        {{ recipe.recipe_tip }}<br>
-        {{ recipe.serve }}<br>
-        {{ recipe.date_posted }}<br>
-        <div>
-          <img src="{{ recipe.image_source }}" alt="curry image">
-        </div>
-        <br>
+{% extends "base.html" %}
+{% block content %}
+  {% for recipe in recipes %}
+    <h2>{{ recipe.recipe_name }}</h2><br>
+    <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
+    <p><span style="font-weight: bold;">Ingredients:</span></p>
+    <ul>
+      {% for item in recipe.ingredients %}
+        <li>{{ item }}</li><br>
       {% endfor %}
-
-</body>
-</html>
+    </ul>
+    
+    <p><span style="font-weight: bold;">Method:</span></p>
+    <ol>
+      {% for step in recipe.method %}
+        <li>
+          {{ step }}
+        </li> <br>
+    {% endfor %}
+    </ol>  
+    <p><span style="font-weight: bold;">Preparation time: </span> {{ recipe.cook_time }}</p>
+    <p><span style="font-weight: bold;">Cooking time:</span> {{ recipe.prep_time }}</p>
+    <p><span style="font-weight: bold;">Tools required:</span> 
+      <ul>
+        {% for tool in recipe.tools_required %} 
+          <li>{{  tool }}</li>
+      {% endfor %}
+      </ul>
+    </p> 
+    <p><span style="font-weight: bold;">Cuisine:</span> {{ recipe.cuisine }}</p>
+    <p><span style="font-weight: bold;">Serve:</span> {{ recipe.serve }} people</p>
+    <p><span style="font-weight: bold;">Rating:</span> {{ recipe.customer_rating }}</p>
+    <p><span style="font-weight: bold;">Review:</span> {{ recipe.customer_review }}</p>
+    <p><span style="font-weight: bold;">Tip: </span>{{ recipe.recipe_tip }}</p>   
+    <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime("%d %B, %Y") }}</p>
+    <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
+    <div>
+      <img src="{{ recipe.image_source }}" alt="curry image">
+    </div>
+    <br>
+  {% endfor %}
+{% endblock %}
