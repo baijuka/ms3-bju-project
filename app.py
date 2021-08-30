@@ -78,7 +78,7 @@ def logout():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
-      {"username": session["user"]})
+      {"username": session["user"]})["username"]
   
     user_recipe = mongo.db.recipes.find(
       {"created_by": session["user"]})
