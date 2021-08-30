@@ -81,7 +81,7 @@
                         <p><span style="font-weight: bold;">Rating:</span> {{ recipe.customer_rating }}</p>
                         <p><span style="font-weight: bold;">Review:</span> {{ recipe.customer_review }}</p>
                         <p><span style="font-weight: bold;">Tip: </span>{{ recipe.recipe_tip }}</p>   
-                        <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime("%d %B, %Y") }}</p>
+                        <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted }}</p> 
                         <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
                         <br> 
                     {% endfor %}  

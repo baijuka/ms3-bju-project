@@ -74,18 +74,16 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-@app.route("/profile/<user>", methods=["GET", "POST"])
-def profile(user):
-  #  username = mongo.db.users.find_one(
-  #     {"username": session["user"]})["username"]
-  
-  user = mongo.db.users.find_one(
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
       {"username": session["user"]})
-  user_recipe = mongo.db.recipes.find(
+  
+    user_recipe = mongo.db.recipes.find(
       {"created_by": session["user"]})
- # if user_recipe:
- #    return "hello"
-  return render_template("profile.html", user=user, user_recipe=user_recipe)
+
+    return render_template("profile.html", user=username, user_recipe=user_recipe)
 
 
 if __name__ == "__main__":
