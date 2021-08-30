@@ -86,6 +86,11 @@ def profile(username):
     return render_template("profile.html", user=username, user_recipe=user_recipe)
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

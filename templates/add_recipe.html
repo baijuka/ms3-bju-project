@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-hamburger prefix light-blue-text text-darken-4"></i>
+                    <input id="category_name" name="category_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="category_name">Category</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-hourglass prefix light-blue-text text-darken-4"></i>
+                    <input id="prep_time" name="prep_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="prep_time">Preparation Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-hourglass-half prefix light-blue-text text-darken-4"></i>
+                    <input id="prep_time" name="cook_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="cook_time">Cook Time</label>
+                </div>
+            </div>
+          
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-friends prefix light-blue-text text-darken-4"></i>
+                    <input id="serve" name="serve" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="serve">Serve</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-globe prefix light-blue-text text-darken-4"></i>
+                    <input id="cuisine" name="cuisine" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="cuisine">Cuisine</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
+                    <input id="tools_required" name="tools_required" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="tools_required">Tools Required</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
+                    <input id="ingredients" name="ingredients" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="ingredients">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
+                    <input id="method" name="method minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="method">Method</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
+                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="recipe_tip">Tip</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="date_posted" name="date_posted" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="date_posted">Last Updated</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+{% endblock %}
