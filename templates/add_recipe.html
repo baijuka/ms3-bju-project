@@ -3,7 +3,7 @@
 
     <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
 
-    <div class="row">
+    <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
@@ -14,7 +14,19 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-hamburger prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                      <option value="" disabled selected>Choose Category</option>
+                      {% for category in categories %}
+                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                      {% endfor %}
+                    </select>
+                    <label>Food Category</label>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    
                     <input id="category_name" name="category_name" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="category_name">Category</label>
                 </div>
