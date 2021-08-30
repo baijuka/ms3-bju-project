@@ -4,7 +4,7 @@
     <h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
 
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action=" {{ url_for('add_recipe') }}">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
@@ -26,13 +26,6 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    
-                    <input id="category_name" name="category_name" minlength="5" maxlength="50" type="text" class="validate" required>
-                    <label for="category_name">Category</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
                     <i class="far fa-hourglass prefix light-blue-text text-darken-4"></i>
                     <input id="prep_time" name="prep_time" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="prep_time">Preparation Time</label>
@@ -49,7 +42,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-friends prefix light-blue-text text-darken-4"></i>
-                    <input id="serve" name="serve" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="serve" name="serve" type="text" class="validate" required>
                     <label for="serve">Serve</label>
                 </div>
             </div>
@@ -77,14 +70,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
-                    <input id="method" name="method minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="method" name="method" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="method">Method</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" type="text" class="validate">
                     <label for="recipe_tip">Tip</label>
                 </div>
             </div>
@@ -93,6 +86,13 @@
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
                     <input id="date_posted" name="date_posted" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="date_posted">Last Updated</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
                 </div>
             </div>
         </form>

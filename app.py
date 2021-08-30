@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -86,8 +87,27 @@ def profile(username):
     return render_template("profile.html", user=username, user_recipe=user_recipe)
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
+    if request.method=="POST":
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "cook_time": request.form.get("cook_time"),
+            "prep_time": request.form.get("prep_time"),
+            "tools_required": request.form.get("tools_required"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "serve": request.form.get("serve"),
+            "cuisine": request.form.get("cuisine"),
+            "date_posted": datetime.now(),
+            "recipe_tip": request.form.get("recipe_tip"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe successfully added")
+        return redirect(url_for('get_recipes'))
+
     categories = mongo.db.categories.find().sort("category_name",1)
     return render_template("add_recipe.html", categories=categories)
 
