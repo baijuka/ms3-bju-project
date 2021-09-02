@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -16,9 +16,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                      <option value="" disabled selected>Choose Category</option>
+                      <option value="" disabled>Choose Category</option>
                       {% for category in categories %}
-                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                        {% if category.category_name == recipe.category_name %}
+                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                            <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                        {% endif %}
                       {% endfor %}
                     </select>
                     <label>Food Category</label>
@@ -27,14 +31,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="far fa-hourglass prefix light-blue-text text-darken-4"></i>
-                    <input id="prep_time" name="prep_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="prep_time" name="prep_time" minlength="5" maxlength="50" value="{{ recipe.prep_time }}" type="text" class="validate" required>
                     <label for="prep_time">Preparation Time</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-hourglass-half prefix light-blue-text text-darken-4"></i>
-                    <input id="prep_time" name="cook_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="prep_time" name="cook_time" minlength="5" maxlength="50" value="{{ recipe.cook_time }}" type="text" class="validate" required>
                     <label for="cook_time">Cook Time</label>
                 </div>
             </div>
@@ -42,56 +46,57 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-friends prefix light-blue-text text-darken-4"></i>
-                    <input id="serve" name="serve" type="text" class="validate" required>
+                    <input id="serve" name="serve" type="text" value="{{ recipe.serve }}" class="validate" required>
                     <label for="serve">Serve</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-globe prefix light-blue-text text-darken-4"></i>
-                    <input id="cuisine" name="cuisine" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="cuisine" name="cuisine" minlength="5" maxlength="50" value="{{ recipe.cuisine }}" type="text" class="validate" required>
                     <label for="cuisine">Cuisine</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
-                    <input id="tools_required" name="tools_required" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="tools_required" name="tools_required" minlength="5" maxlength="50" value="{{ recipe.tools_required[0]}}" type="text" class="validate" required>
                     <label for="tools_required">Tools Required</label>
                 </div>
             </div>
             <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
-                        <input id="ingredients" name="ingredients" minlength="3" maxlength="50" type="text" class="validate" required>
+                        <input id="ingredients" name="ingredients" minlength="3" maxlength="50" value="{{ recipe.ingredients[0] }}" type="text" class="validate" required>
                         <label for="ingredients">Ingredients</label>
                     </div>             
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
-                    <input id="method" name="method" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="method" name="method" minlength="5" maxlength="50" value="{{ recipe.method[0] }}" type="text" class="validate" required>
                     <label for="method">Method</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" type="text" class="validate">
+                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" value="{{ recipe.recipe_tip }}" type="text" class="validate">
                     <label for="recipe_tip">Tip</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="iamge_source" name="image_source" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="iamge_source" name="image_source" minlength="5" maxlength="50" value="{{ recipe.image_source }}" type="text" class="validate" required>
                     <label for="image_source">Image URL</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">Cancel</a>
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Update Recipe <i class="fas fa-edit right"></i>
+                        Update Recipe <i class="fas fa-check-square right"></i>
                     </button>
                 </div>
             </div>
