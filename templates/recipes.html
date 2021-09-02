@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+  <h2 style="color: rgb(211, 152, 42); text-align: center; margin-top: 20px;">Cookerish Recipes</h2>
   {% for recipe in recipes %}
-    <h2>{{ recipe.recipe_name }}</h2><br>
+    <h4>{{ recipe.recipe_name }}</h4><br>
     <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
     <p><span style="font-weight: bold;">Ingredients:</span></p>
     <ul>
@@ -25,7 +26,7 @@
     <p><span style="font-weight: bold;">Tools required:</span> 
       <ul>
         {% for tool in recipe.tools_required %} 
-          <li class="list">{{  tool }}</li>
+        <li class="list"><a href="https://www.procook.co.uk/" target="_blank">{{  tool }}</a></li>
       {% endfor %}
       </ul>
     </p> 

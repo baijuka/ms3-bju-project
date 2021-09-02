@@ -18,3 +18,7 @@ ul li.list {
 ul li a {
     text-decoration: none;
 }
+
+.btn-small {
+    margin: 5px;
+}
