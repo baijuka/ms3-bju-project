@@ -95,14 +95,15 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "cook_time": request.form.get("cook_time"),
             "prep_time": request.form.get("prep_time"),
-            "tools_required": request.form.get("tools_required"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "tools_required": list(request.form.get("tools_required")),
+            "ingredients": list(request.form.get("ingredients")),
+            "method": list(request.form.get("method")),
             "serve": request.form.get("serve"),
             "cuisine": request.form.get("cuisine"),
             "date_posted": datetime.now(),
             "recipe_tip": request.form.get("recipe_tip"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "image_source": request.form.get("image_source")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe successfully added")
