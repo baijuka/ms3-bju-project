@@ -34,7 +34,7 @@
                             <div class="col-9"><h4>{{ loop.index}}. {{ recipe.recipe_name }}</h4><br>
                             </div>
                             <div class="col-3">
-                                <a href="" class="btn-small light-blue accent-4">Edit</a>
+                                <a href="{{ url_for('edit_recipe',recipe_id=recipe._id)}}" class="btn-small light-blue accent-4">Edit</a>
                                 <a href="" class="btn-small red lighten-2">Delete</a>
                             </div>  
                             <div class="row">
