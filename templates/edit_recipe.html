@@ -88,13 +88,13 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="iamge_source" name="image_source" minlength="5" maxlength="50" value="{{ recipe.image_source }}" type="text" class="validate" required>
+                    <input id="iamge_source" name="image_source" minlength="5" maxlength="150" value="{{ recipe.image_source }}" type="text" class="validate" required>
                     <label for="image_source">Image URL</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">Cancel</a>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">Cancel</a>
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                         Update Recipe <i class="fas fa-check-square right"></i>
                     </button>
