@@ -87,6 +87,7 @@ def profile(username):
     return render_template("profile.html", user=username, user_recipe=user_recipe)
 
 
+
 @app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
     if request.method=="POST":

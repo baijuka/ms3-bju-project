@@ -7,9 +7,9 @@
                 <h3 class="center-align dark-grey-text text-darken-4">
                     {{ user.username }}'s Profile<br>
                 </h3>
-                <table>
+                <table style="width: 70%;">
                     <tr>
-                        <td><span style="font-weight:500">First Name:</span></td>
+                        <td><span style="font-weight:500;">First Name:</span></td>
                         <td><span style="font-size: large;">{{ user.first_name }}</span></td>
                     </tr>
                     <tr>
@@ -20,7 +20,8 @@
                         <td><span style="font-weight:500">Location:</span></td>
                         <td><span style="font-size: large;">{{ user.location }}</span></td>
                     </tr>
-                </table>
+                </table>                  
+                </div>
             </div>
         </div>
     </div>         
@@ -35,10 +36,10 @@
                             </div>
                             <div class="col-3">
                                 <a href="{{ url_for('edit_recipe',recipe_id=recipe._id)}}" class="btn-small light-blue accent-4">Edit</a>
-                                <a href="{{ url_for('delete_recipe',recipe_id=recipe._id)}}" class="btn-small red lighten-2">Delete</a>
+                                <a href="{{ url_for('delete_recipe',recipe_id=recipe._id)}}" class="btn-small red darken-1">Delete</a>                                 
                             </div>  
                             <div class="row">
-                                <div class="col-6"> <img src="{{ recipe.image_source }}" alt="curry image">
+                                <div class="col-6"> <img src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%;">
                                 </div>
                                 <div class="col-6">
                                     <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>

@@ -38,7 +38,7 @@
     <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime("%d %B, %Y") }}</p>
     <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
     <div>
-      <img src="{{ recipe.image_source }}" alt="curry image">
+      <img src="{{ recipe.image_source }}" alt="curry image" style="max-width: 500px;height:auto;">
     </div>
     <br>
   {% endfor %}

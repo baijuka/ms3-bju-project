@@ -1,6 +1,7 @@
 /*------  materialize initialisation ---- */
 
 $(document).ready(function(){
+    $('.modal').modal();
     $('.sidenav').sidenav({edge:'right'});
     $('.collapsible').collapsible();
     $('select').formSelect();
