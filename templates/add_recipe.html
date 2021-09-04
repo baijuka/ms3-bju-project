@@ -56,12 +56,12 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
-                    <input id="tools_required" name="tools_required" minlength="1" maxlength="50" type="text" class="validate" required>
+                    <input id="tools_required" name="tools" minlength="1" maxlength="50" type="text" class="validate" required>
                     <label for="tools_required">Tools Required</label>
                     <div class="container">
-                        <ul id="tools_ul">
-                        </ul>
-                        <button id="btn_tools" class="btn btn-primary" onClick="add_tools();">Add</button>
+                        <div id="tools_ul">
+                        </div>
+                        <button id="btn_tools" class="btn btn-primary" onClick="add_tools(event);" type="button" >Add</button>
                     </div>
                 </div>
                 
