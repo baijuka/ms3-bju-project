@@ -97,9 +97,8 @@ def add_recipe():
             "cook_time": request.form.get("cook_time"),
             "prep_time": request.form.get("prep_time"),
             "tools_required": request.form.getlist("tools"),
-            # "tools_required": list(request.form.get("tools_required")),
-            "ingredients": list(request.form.get("ingredients")),
-            "method": list(request.form.get("method")),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "serve": request.form.get("serve"),
             "cuisine": request.form.get("cuisine"),
             "date_posted": datetime.now(),
@@ -146,7 +145,8 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipes"))
+    # return redirect(url_for("get_recipes"))
+    return redirect(url_for('profile', username=session['user']))
 
 
 if __name__ == "__main__":
