@@ -61,7 +61,7 @@
                     <div class="container">
                          <div id="tools_div">
                         </div>
-                        <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" >Add More</button>
+                        <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" style="float: right;">Add More</button>
                     </div>
                 </div>              
             </div>
@@ -73,19 +73,19 @@
                         <div class="container">
                             <div id="ingredients_div">
                             </div>
-                           <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" >Add More</button>
+                           <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" style="float: right;">Add More</button>
                         </div>
                     </div>
             </div> 
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
-                    <input id="method" name="method" minlength="1" maxlength="50" type="text" class="validate" required>
+                    <input id="method" name="method" minlength="1" maxlength="200" type="text" class="validate" required>
                     <label for="method">Method</label>
                     <div class="container">
                         <div id="method_div">
                         </div>
-                       <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" >Add More</button>
+                       <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Add More</button>
                     </div>
                 </div>
             </div>
@@ -107,6 +107,8 @@
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                         Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">Cancel</a>
                     </button>
                 </div>
             </div>
