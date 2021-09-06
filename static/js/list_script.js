@@ -32,7 +32,20 @@ function add_tools(event)
         document.getElementById('tools_required').value="";
         document.getElementById('tools_required').focus();
     };
-    
+
+    var tools_div=document.getElementById('edit_tools_div');
+        
+    function edit_add_tools(event)
+        {
+            event.preventDefault();
+            var tools_item = document.getElementById('tools_required').value;
+            var tools_input = document.createElement('input');
+            tools_input.setAttribute('name', 'tools');
+            tools_input.setAttribute('value', tools_item);
+            tools_div.append(tools_input);
+            document.getElementById('tools_required').value="";
+            document.getElementById('tools_required').focus();
+        };
 
 var ingredients_div=document.getElementById('ingredients_div');
     

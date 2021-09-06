@@ -31,14 +31,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="far fa-hourglass prefix light-blue-text text-darken-4"></i>
-                    <input id="prep_time" name="prep_time" minlength="5" maxlength="50" value="{{ recipe.prep_time }}" type="text" class="validate" required>
+                    <input id="prep_time" name="prep_time" minlength="3" maxlength="50" value="{{ recipe.prep_time }}" type="text" class="validate" required>
                     <label for="prep_time">Preparation Time</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-hourglass-half prefix light-blue-text text-darken-4"></i>
-                    <input id="prep_time" name="cook_time" minlength="5" maxlength="50" value="{{ recipe.cook_time }}" type="text" class="validate" required>
+                    <input id="prep_time" name="cook_time" minlength="3" maxlength="50" value="{{ recipe.cook_time }}" type="text" class="validate" required>
                     <label for="cook_time">Cook Time</label>
                 </div>
             </div>
@@ -53,35 +53,46 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-globe prefix light-blue-text text-darken-4"></i>
-                    <input id="cuisine" name="cuisine" minlength="5" maxlength="50" value="{{ recipe.cuisine }}" type="text" class="validate" required>
+                    <input id="cuisine" name="cuisine" minlength="1" maxlength="50" value="{{ recipe.cuisine }}" type="text" class="validate" required>
                     <label for="cuisine">Cuisine</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
-                    <input id="tools_required" name="tools_required" minlength="5" maxlength="50" value="{{ recipe.tools_required[0]}}" type="text" class="validate" required>
                     <label for="tools_required">Tools Required</label>
+                    {% for tool in recipe.tools_required %}
+                        <input id="tools_required" name="tools" minlength="1" maxlength="100" value="{{ tool }}" type="text" class="validate" required>      
+                    {% endfor %}
+                    <div class="container">
+                        <div id="edit_tools_div">
+                       </div>
+                       <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="edit_add_tools(event);" type="button" style="float: right;">Add More</button>
+                   </div>
                 </div>
             </div>
             <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
-                        <input id="ingredients" name="ingredients" minlength="3" maxlength="50" value="{{ recipe.ingredients[0] }}" type="text" class="validate" required>
                         <label for="ingredients">Ingredients</label>
+                        {% for item in recipe.ingredients %}
+                            <input id="ingredients" name="ingredients" minlength="1" maxlength="100" value="{{ item }}" type="text" class="validate" required>
+                        {% endfor %}
                     </div>             
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
-                    <input id="method" name="method" minlength="5" maxlength="50" value="{{ recipe.method[0] }}" type="text" class="validate" required>
                     <label for="method">Method</label>
+                    {% for step in recipe.method %}
+                        <input id="method" name="method" minlength="1" maxlength="150" value="{{ step }}" type="text" class="validate" required>
+                    {% endfor %}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_tip" name="recipe_tip" minlength="5" maxlength="50" value="{{ recipe.recipe_tip }}" type="text" class="validate">
+                    <input id="recipe_tip" name="recipe_tip" minlength="0" maxlength="150" value="{{ recipe.recipe_tip }}" type="text" class="validate">
                     <label for="recipe_tip">Tip</label>
                 </div>
             </div>
