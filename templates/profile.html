@@ -29,9 +29,9 @@
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <div class="dark-grey-text text-darken-4">
+                    <div class="container">
                     {% for recipe in user_recipe %}
-                        <div class="container">
-                            <div class="row">
+                        <div class="row">
                             <div class="col-9"><h4>{{ loop.index}}. {{ recipe.recipe_name }}</h4><br>
                             </div>
                             <div class="col-3">
@@ -39,9 +39,9 @@
                                 <a href="{{ url_for('delete_recipe',recipe_id=recipe._id)}}" class="btn-small red darken-1">Delete</a>                                 
                             </div>  
                             <div class="row">
-                                <div class="col-6"> <img src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%;">
+                                <div class="col m6"> <img id="img-edit" src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%;">
                                 </div>
-                                <div class="col-6">
+                                <div class="col m6">
                                     <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
                                     <p><span style="font-weight: bold;">Preparation time: </span> {{ recipe.cook_time }}</p>
                                     <p><span style="font-weight: bold;">Cooking time:</span> {{ recipe.prep_time }}</p>
@@ -49,7 +49,6 @@
                                     <p><span style="font-weight: bold;">Serve:</span> {{ recipe.serve }} people</p>
                                 </div>
                             </div>                        
-                            </div>
                         </div>
                         <p><span style="font-weight: bold;">Tools required:</span> 
                             <ul>
@@ -62,32 +61,24 @@
                         <!-- bootstrap -->
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                    <p><span style="font-weight: bold;">Ingredients:</span></p>
-                                            <ul>
-                                                {% for item in recipe.ingredients %}
-                                                    <li class="list">{{ item }}</li>
-                                                {% endfor %}
-                                            </ul> 
-                                    </div>
-                                </div>
+                                <p><span style="font-weight: bold;">Ingredients:</span></p>
+                                    <ul>
+                                        {% for item in recipe.ingredients %}
+                                            <li class="list">{{ item }}</li>
+                                        {% endfor %}
+                                    </ul> 
                             </div>
-                                <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p><span style="font-weight: bold;">Method:</span></p>
-                                        <ol>
-                                            {% for step in recipe.method %}
-                                                <li>
-                                                    {{ step }}
-                                                </li> <br>
-                                            {% endfor %}
-                                        </ol>  
-                                    </div>
-                                </div>
-                                </div>
+                            <div class="col-sm-6">
+                                <p><span style="font-weight: bold;">Method:</span></p>
+                                    <ol>
+                                        {% for step in recipe.method %}
+                                            <li>
+                                                {{ step }}
+                                            </li> <br>
+                                        {% endfor %}
+                                    </ol>  
                             </div>
+                        </div>
                         <!-- bootstrap end -->
                         <p><span style="font-weight: bold;">Rating:</span> {{ recipe.customer_rating }}</p>
                         <p><span style="font-weight: bold;">Review:</span> {{ recipe.customer_review }}</p>
