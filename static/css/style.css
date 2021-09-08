@@ -28,8 +28,29 @@ ul li a {
     margin: 5px;
 }
 
+.btn-primary, .btn-danger, .btn-warning{
+    height: 30px;
+    margin: 5px 5px;
+    padding: 3px 3px;
+}
+
+.modal {
+    width: 30%;
+    height: auto;
+}
+
 @media only screen and (max-width: 600px) {
     img {
         width: 70%;
+    }
+    .modal {
+        width: 100%;
+        height: auto;
+    }
+    .btn-primary, .btn-danger, .btn-warning{
+        height: 25px;
+        margin: 5px 5px;
+        padding-top: 3px 3px;
+        font-size: 1rem;
     }
   }
