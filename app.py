@@ -149,6 +149,24 @@ def delete_recipe(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
+@app.route("/edit_userInfo/<username>", methods=["GET","POST"])
+def edit_userInfo(username):
+    if request.method=="POST":
+        submit = {
+            "user_name": username,
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "location": request.form.get("location"),
+        }
+        mongo.db.users.update({"username": username}, submit)
+        flash("Recipe successfully updated")
+        return redirect(url_for('profile', username=username))
+
+    # username = session['user']
+    user = mongo.db.users.find_one({'username': username})
+    return render_template('edit_user_info.html', user=user)
+
+
 @app.route('/get_categories')
 def get_categories():
     pass

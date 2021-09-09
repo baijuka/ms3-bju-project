@@ -20,7 +20,10 @@
                         <td><span style="font-weight:500">Location:</span></td>
                         <td><span style="font-size: large;">{{ user.location }}</span></td>
                     </tr>
-                </table>                  
+                </table>
+                <div>
+                      <a href="{{ url_for('edit_userInfo',username=session['user']) }}" class="btn-small blue accent-3" style="display: inline-block; text-align: right; margin-left: 80%;">Edit</a> 
+                </div>                  
                 </div>
             </div>
         </div>
@@ -45,19 +48,18 @@
                               </button>
                               
                               <!-- Modal -->
-                              <div class="modal fade" id="modal-{{loop.index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="modal-{{loop.index}}" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Delete Recipe</h5>
+                                      <h5 class="modal-title" id="modalLabel" style="color: rgb(250, 108, 14);">Delete Recipe!</h5>
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                      Are you sure, you want to delete recipe?  {{ recipe._id}}
+                                      <p style="color: rgb(0, 89, 255);">Are you sure, you want to delete recipe?</p>
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" onClick="window.location.href='{{ url_for('delete_recipe',recipe_id=recipe._id)}}';" class="btn btn-primary" data-bs-dismiss="modal" style="padding: 3px 15px;">OK</button>
-                                     <!--  <button type="button" class="btn btn-warning" style="margin-left: 5px;">Cancel</button> -->
                                      <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="margin-left: 5px;">Cancel</button>
                                     </div>
                                   </div>
