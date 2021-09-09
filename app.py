@@ -153,13 +153,13 @@ def delete_recipe(recipe_id):
 def edit_userInfo(username):
     if request.method=="POST":
         submit = {
-            "user_name": username,
-            "first_name": request.form.get("first_name"),
-            "last_name": request.form.get("last_name"),
-            "location": request.form.get("location"),
-        }
+            "$set": {"first_name": request.form.get("first_name"),
+                      "last_name": request.form.get("last_name"),
+                      "location": request.form.get("location")}
+                    }
+
         mongo.db.users.update({"username": username}, submit)
-        flash("Recipe successfully updated")
+        flash("User details successfully updated")
         return redirect(url_for('profile', username=username))
 
     # username = session['user']
