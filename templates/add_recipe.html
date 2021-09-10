@@ -79,6 +79,19 @@
             </div> 
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="method" name="method" minlength="5"
+                        maxlength="250" class="materialize-textarea"></textarea>
+                    <label for="method">Method</label>
+                    <div class="container">
+                        <div id="method_div">
+                        </div>
+                       <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Add More</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
                     <input id="method" name="method" minlength="1" maxlength="200" type="text" class="validate" required>
                     <label for="method">Method</label>
@@ -88,11 +101,12 @@
                        <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Add More</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_tip" name="recipe_tip" minlength="0" maxlength="50" type="text" class="validate">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_tip" name="recipe_tip" minlength="5"
+                        maxlength="250" class="materialize-textarea"></textarea>
                     <label for="recipe_tip">Tip</label>
                 </div>
             </div>
