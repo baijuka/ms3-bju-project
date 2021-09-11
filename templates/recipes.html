@@ -1,45 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1 style="color: rgb(180, 75, 5); text-align: center; margin-top: 20px;">Cookerish recipes of your choice</h1>
+
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#"><img src="../static/images/image1.jpg"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image2.jpg"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image3.jpg"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image4.jpg"></a>
+  </div>
+  <h1 style="color: rgb(180, 75, 5); text-align: center; margin-top: 3%; margin-bottom: 2%;">Cookerish recipes of your choice</h1>
+
   {% for recipe in recipes %}
-    <h4>{{ loop.index }}. {{ recipe.recipe_name }}</h4><br>
-    <div>
-      <img id="recipe_img" src="{{ recipe.image_source }}" alt="curry image" style="max-width: 500px;height:auto;">
+    <div class="row">
+      <div class="col-9"><h4>{{ loop.index}}. {{ recipe.recipe_name }}</h4><br>
+      </div>
+        <div class="row">
+          <div class="col m6"> <img id="img-edit" src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%;">
+          </div>
+          <div class="col m6">
+              <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
+              <p><span style="font-weight: bold;">Preparation time: </span> {{ recipe.cook_time }}</p>
+              <p><span style="font-weight: bold;">Cooking time:</span> {{ recipe.prep_time }}</p>
+              <p><span style="font-weight: bold;">Cuisine:</span> {{ recipe.cuisine }}</p>
+              <p><span style="font-weight: bold;">Serve:</span> {{ recipe.serve }} people</p>
+          </div>
+      </div>                        
     </div>
-    <br>
-    <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
-    <p><span style="font-weight: bold;">Preparation time: </span> {{ recipe.cook_time }}</p>
-    <p><span style="font-weight: bold;">Cooking time:</span> {{ recipe.prep_time }}</p>
-    <p><span style="font-weight: bold;">Cuisine:</span> {{ recipe.cuisine }}</p>
-    <p><span style="font-weight: bold;">Serve:</span> {{ recipe.serve }} people</p>
-    <p><span style="font-weight: bold;">Ingredients:</span></p>
-    <ul>
-      {% for item in recipe.ingredients %}
-        <li class="list">
-          {{ item }}
-        </li>
-      {% endfor %}
-    </ul>
-    
-    <p><span style="font-weight: bold;">Method:</span></p>
-    <ol>
-      {% for step in recipe.method %}
-        <li>
-          {{ step }}
-        </li> <br>
-    {% endfor %}
-    </ol>  
     <p><span style="font-weight: bold;">Tools required:</span> 
       <ul>
-        {% for tool in recipe.tools_required %} 
-        <li class="list"><a href="https://www.procook.co.uk/" target="_blank">{{  tool }}</a></li>
-      {% endfor %}
+          {% for tool in recipe.tools_required %} 
+              <li class="list"><a href="https://www.procook.co.uk/" target="_blank">{{  tool }}</a></li>
+          {% endfor %}
       </ul>
-    </p> 
-    <p><span style="font-weight: bold;">Tip: </span>{{ recipe.recipe_tip }}</p>   
-    <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime("%d %B, %Y") }}</p>
-    <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
-    <br>
+    </p>
+  
+  <!-- bootstrap -->
+  <div class="row">
+      <div class="col-sm-6">
+          <p><span style="font-weight: bold;">Ingredients:</span></p>
+              <ul>
+                  {% for item in recipe.ingredients %}
+                      <li class="list">{{ item }}</li>
+                  {% endfor %}
+              </ul> 
+      </div>
+      <div class="col-sm-6">
+          <p><span style="font-weight: bold;">Method:</span></p>
+              <ol>
+                  {% for step in recipe.method %}
+                      <li>
+                          {{ step }}
+                      </li> <br>
+                  {% endfor %}
+              </ol>  
+      </div>
+  </div>
+  <!-- bootstrap end -->
+  <p><span style="font-weight: bold;">Tip: </span>{{ recipe.recipe_tip }}</p>   
+  <p><span style="font-weight: bold;">Posted on:</span> {{ recipe.date_posted.strftime('%d-%m-%Y') }}</p> 
+  <p><span style="font-weight: bold;">Created by:</span> {{ recipe.created_by }}</p>
+  <hr style="color: rgb(212, 207, 207);">
+  <br><br>
   {% endfor %}
         
 {% endblock %}
