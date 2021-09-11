@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="light-blue-text text-darken-4 center-align" style="margin-top: 5%;">Manage Categories</h1>
+    <div class="row" style="margin-top: 3%;">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_category') }}" class="btn-large blue-grey text-shadow">
+                Add Category <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 3%;">
+        {% for category in categories %}
+            <div class="col s12 m3" style="min-width: 278px; max-width: 400px;">
+                <div class="card blue-grey text-shadow center-align">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ category.category_name }}</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn lime accent-1">Edit</a>
+                        <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn blue lighten-1 text-white">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
