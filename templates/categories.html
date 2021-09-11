@@ -17,9 +17,30 @@
                         <span class="card-title">{{ category.category_name }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn lime accent-1">Edit</a>
-                        <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn blue lighten-1 text-white">Delete</a>
+                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn lime accent-1" style="height: 28px; padding:3px 10px;">Edit</a>
+                        <!-- <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn blue lighten-1 text-white">Delete</a> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{loop.index}}">
+                            Delete
+                          </button>                          
                     </div>
+                </div>
+            </div>
+             <!-- Modal -->
+             <div class="modal fade" id="modal-{{loop.index}}" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content"  style="background-color: rgb(255, 255, 255);">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalLabel" style="color: rgb(250, 108, 14);">Delete Category!</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p style="color: rgb(0, 89, 255);">Are you sure, you want to delete category?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" onClick="window.location.href='{{ url_for('delete_category', category_id=category._id) }}';" class="btn btn-primary" data-bs-dismiss="modal" style="padding: 3px 15px;">OK</button>
+                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="margin-left: 5px;">Cancel</button>
+                    </div>
+                  </div>
                 </div>
             </div>
         {% endfor %}
