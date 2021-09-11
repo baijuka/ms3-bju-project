@@ -85,15 +85,19 @@
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
                     <label for="method">Method</label>
                     {% for step in recipe.method %}
-                        <input id="method" name="method" minlength="1" maxlength="150" value="{{ step }}" type="text" class="validate" required>
+                        <!-- <input id="method" name="method" minlength="1" maxlength="150" value="{{ step }}" type="text" class="validate" required> -->
+                        <textarea id="method" name="method" minlength="5"
+                        maxlength="500" class="materialize-textarea" type="text" class="validate">{{ step }}</textarea>
                     {% endfor %}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-blender prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_tip" name="recipe_tip" minlength="0" maxlength="150" value="{{ recipe.recipe_tip }}" type="text" class="validate">
-                    <label for="recipe_tip">Tip</label>
+                    <!-- <input id="recipe_tip" name="recipe_tip" minlength="0" maxlength="150" value="{{ recipe.recipe_tip }}" type="text" class="validate"> -->
+                    <textarea id="recipe_tip" name="recipe_tip" minlength="5"
+                    maxlength="250" class="materialize-textarea">{{ recipe.recipe_tip }}</textarea>
+                    <label for="recipe_tip">Recipe Tip</label>
                 </div>
             </div>
             <div class="row">

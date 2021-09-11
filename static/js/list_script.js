@@ -32,7 +32,7 @@ function add_tools(event)
         document.getElementById('tools_required').focus();
     };
 
-var tools_div=document.getElementById('edit_tools_div');
+
         
 function edit_add_tools(event)
     {
@@ -51,7 +51,7 @@ function edit_add_tools(event)
 function add_ingredient(event)
     {
         event.preventDefault();
-        var ingredients_div=document.getElementById('ingredients_div');
+        var ingredients_div = document.getElementById('ingredients_div');
         var ingredients_item = document.getElementById('ingredients').value;
         var ingredients_input = document.createElement('input');
         ingredients_input.setAttribute('name', 'ingredients');
