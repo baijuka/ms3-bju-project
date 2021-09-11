@@ -28,6 +28,9 @@ ul li a {
     margin: 5px;
 }
 
+.btn-primary{
+    background-color: rgb(56, 157, 224);
+}
 .btn-primary, .btn-danger, .btn-warning{
     height: 30px;
     margin: 5px 5px;

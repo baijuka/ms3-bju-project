@@ -17,23 +17,6 @@
 //         document.getElementById('tools_required').focus();
 //     };
 
-$(document).ready(function() {
-    var input_value;
-    var counter=0;
-
-    $(".btn_add_tools").click(function(e){
-        e.preventDefault();
-        counter++;
-        input_value = document.getElementById("toos_required").value;
-        $(".tools_div").append('<div><input type="text" name="tools" value='+input_value+'/><a href="#" class="remve_tool">Remove</a>)</div>');
-        });
-    $(".tools_div").on("click",".remove_tool", function(e){
-        e.preventDefault();
-        $(this).parent('div').remove();
-        counter--;
-    });
-});
-
         
 function add_tools(event)
     {
@@ -52,13 +35,9 @@ function add_tools(event)
 function edit_add_tools(event)
     {
         event.preventDefault();
-        var tools_item = document.getElementById('tools_required').value;
         var tools_input = document.createElement('input');
         tools_input.setAttribute('name', 'tools');
-        tools_input.setAttribute('value', tools_item);
-        tools_div.append(tools_input);
-        document.getElementById('tools_required').value="";
-        document.getElementById('tools_required').focus();
+        document.getElementById('edit_tools_div').append(tools_input);
     };
 
 
@@ -76,7 +55,13 @@ function add_ingredient(event)
         document.getElementById('ingredients').focus();
     };
 
-        
+function edit_add_ingredient(event)
+{
+    event.preventDefault();
+    var ingredient_input = document.createElement('input');
+    ingredient_input.setAttribute('name', 'ingredients');
+    document.getElementById('edit_ingredient_div').append(ingredient_input);
+};        
    
 function add_method(event)
     {
@@ -90,4 +75,11 @@ function add_method(event)
         document.getElementById('method').value="";
         document.getElementById('method').focus();
     };
-    
+
+function edit_add_method(event)
+    {
+        event.preventDefault();
+        var method_input = document.createElement('TEXTAREA');
+        method_input.setAttribute('name', 'method');
+        document.getElementById('edit_method_div').append(method_input);
+    };     
