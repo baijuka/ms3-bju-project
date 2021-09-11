@@ -56,37 +56,37 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
-                    <input id="tools_required" minlength="1" maxlength="50" type="text" class="validate">
-                    <label for="tools_required">Tools Required (Type the tool name here and then click 'Click to Add')</label>
-                    <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" style="float: right;">Click to Add</button>
+                    <input id="tools_required" name="tools" minlength="1" maxlength="50" type="text" class="validate" required>
+                    <label for="tools_required">Tools Required</label>
                     <div class="container">
                          <div id="tools_div">
                         </div>
+                        <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" style="float: right;">Add More</button>
                     </div>
                 </div>              
             </div>
              <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
-                        <input id="ingredients" minlength="1" maxlength="50" type="text" class="validate">
-                        <label for="ingredients">Ingredients (Type the ingredient name here and then click 'Click to Add')</label>
-                        <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" style="float: right;">Add More</button>
+                        <input id="ingredients" name="ingredients" minlength="1" maxlength="50" type="text" class="validate" required>
+                        <label for="ingredients">Ingredients</label>
                         <div class="container">
                             <div id="ingredients_div">
                             </div>
+                           <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" style="float: right;">Add More</button>
                         </div>
                     </div>
             </div> 
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
-                    <textarea id="method" minlength="5"
+                    <textarea id="method" name="method" minlength="5"
                         maxlength="500" class="materialize-textarea"></textarea>
-                    <label for="method">Method (Type the instruction here and then click 'Click to Add')</label>
-                    <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Add More</button>
+                    <label for="method">Method</label>
                     <div class="container">
                         <div id="method_div">
                         </div>
+                       <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Add More</button>
                     </div>
                 </div>
             </div>

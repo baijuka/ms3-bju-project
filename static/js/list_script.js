@@ -17,7 +17,22 @@
 //         document.getElementById('tools_required').focus();
 //     };
 
+$(document).ready(function() {
+    var input_value;
+    var counter=0;
 
+    $(".btn_add_tools").click(function(e){
+        e.preventDefault();
+        counter++;
+        input_value = document.getElementById("toos_required").value;
+        $(".tools_div").append('<div><input type="text" name="tools" value='+input_value+'/><a href="#" class="remve_tool">Remove</a>)</div>');
+        });
+    $(".tools_div").on("click",".remove_tool", function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+        counter--;
+    });
+});
 
         
 function add_tools(event)
