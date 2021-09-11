@@ -176,6 +176,13 @@ def get_categories():
 @app.route("/add_category", methods=["GET","POST"])
 def add_category():
     if request.method == "POST":
+        existing_category = mongo.db.categories.find_one(
+            {"category_name": request.form.get("category_name").lower()}) 
+
+        if existing_category:
+            flash("Category already exists")
+            return redirect(url_for("add_category"))
+
         category = {
             "category_name": request.form.get('category_name')
         }
