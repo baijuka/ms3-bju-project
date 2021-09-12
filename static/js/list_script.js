@@ -18,6 +18,8 @@ function edit_add_tools(event)
         event.preventDefault();
         var tools_input = document.createElement('input');
         tools_input.setAttribute('name', 'tools');
+        tools_input.setAttribute("style","width:80%");
+        tools_input.setAttribute("style","margin-left:20px;");
         document.getElementById('edit_tools_div').append(tools_input);
     };
 
@@ -41,6 +43,8 @@ function edit_add_ingredient(event)
     event.preventDefault();
     var ingredient_input = document.createElement('input');
     ingredient_input.setAttribute('name', 'ingredients');
+    ingredient_input.setAttribute("style","width:80%");
+    ingredient_input.setAttribute("style","margin-left:20px;");
     document.getElementById('edit_ingredient_div').append(ingredient_input);
 };        
    
@@ -62,5 +66,22 @@ function edit_add_method(event)
         event.preventDefault();
         var method_input = document.createElement('TEXTAREA');
         method_input.setAttribute('name', 'method');
+        method_input.setAttribute("style","width:80%");
+        method_input.setAttribute("style","margin-left:20px;");
         document.getElementById('edit_method_div').append(method_input);
     };     
+
+    $(".remove_tool").on("click", function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+      });
+
+    $(".remove_method").on("click", function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+    });
+
+    $(".remove_ingredient").on("click", function(e){
+        e.preventDefault();
+        $(this).parent('div').remove();
+    });

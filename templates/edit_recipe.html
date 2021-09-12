@@ -53,50 +53,60 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-globe prefix light-blue-text text-darken-4"></i>
-                    <input id="cuisine" name="cuisine" minlength="1" maxlength="50" value="{{ recipe.cuisine }}" type="text" class="validate" required>
+                    <input id="cuisine" name="cuisine" minlength="1" maxlength="50" value="{{ recipe.cuisine }}" type="text" class="validate" >
                     <label for="cuisine">Cuisine</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
+                <div class="col s12">
+                    <i class="fas fa-cut prefix light-blue-text text-darken-4" style="font-size: x-large;"></i>
                     <label for="tools_required">Tools Required</label>
                     {% for tool in recipe.tools_required %}
-                        <input id="tools_required" name="tools" minlength="1" maxlength="100" value="{{ tool }}" type="text" class="validate" required>      
+                        <div class="tool_wrap" style="margin-left: 40px;">
+                            <input id="tools_required" name="tools" minlength="1" maxlength="100" value="{{ tool }}" type="text" class="validate" style="width: 80%;">
+                            <a href="#" class="remove_tool">Remove</a>      
+                        </div>                        
                     {% endfor %}
                     <div class="container">
                         <div id="edit_tools_div">
                        </div>
-                       <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="edit_add_tools(event);" type="button" style="float: right;">Add More</button>
+                       <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="edit_add_tools(event);" type="button" style="float: right; margin-top: 10px;">Add More</button>
                    </div>
                 </div>
             </div>
             <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
+                    <div class="col s12">
+                        <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4" style="font-size: x-large;"></i>
                         <label for="ingredients">Ingredients</label>
                         {% for item in recipe.ingredients %}
-                            <input id="ingredients" name="ingredients" minlength="1" maxlength="100" value="{{ item }}" type="text" class="validate" required>
+                            <div class="ingredient_wrap" style="margin-left: 40px;">
+                                <input id="ingredients" name="ingredients" minlength="1" maxlength="100" value="{{ item }}" type="text" class="validate" style="width: 80%;" >
+                                <a href="#" class="remove_ingredient">Remove</a>      
+                            </div>   
                         {% endfor %}
                         <div class="container">
                             <div id="edit_ingredient_div">
                            </div>
-                           <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="edit_add_ingredient(event);" type="button" style="float: right;">Add More</button>
+                           <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="edit_add_ingredient(event);" type="button" style="float: right; margin-top: 10px;">Add More</button>
                        </div>
                     </div>             
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
+                <div class="col s12">
+                    <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4" style="font-size: x-large;"></i>
                     <label for="method">Method</label>
                     {% for step in recipe.method %}
+                    <div class="method_wrap" style="margin-left: 40px;">
                         <textarea id="method" name="method" minlength="5"
-                        maxlength="500" class="materialize-textarea" type="text" class="validate">{{ step }}</textarea>
+                         maxlength="500"  type="text" class="validate" style="width: 90%;">{{ step }}</textarea>
+                        <a href="#" class="remove_method" style="padding-bottom: 15px;">Remove</a>      
+                    </div>
+                        
                     {% endfor %}
                     <div class="container">
                         <div id="edit_method_div">
                        </div>
-                       <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="edit_add_method(event);" type="button" style="float: right;">Add More</button>
+                       <button id="btn_method" class="btn blue-grey darken-1 text-white" onClick="edit_add_method(event);" type="button" style="float: right; margin-top: 10px;">Add More</button>
                    </div
                 </div>
             </div>

@@ -88,8 +88,8 @@ def profile(username):
     username = mongo.db.users.find_one(
       {"username": session["user"]})
   
-    user_recipe = mongo.db.recipes.find(
-      {"created_by": session["user"]})
+    user_recipe = list(mongo.db.recipes.find(
+      {"created_by": session["user"]}))
 
     return render_template("profile.html", user=username, user_recipe=user_recipe)
 
