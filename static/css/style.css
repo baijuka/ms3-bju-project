@@ -42,6 +42,9 @@ ul li a {
     height: auto;
 }
 
+.advt img {
+    max-width: 400px;
+}
 footer h3 {
     font-size: small;
     }
