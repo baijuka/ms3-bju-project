@@ -22,21 +22,21 @@
     1. [Acknowledgements](#acks)
 
 # <a name="summary"></a> Summary
-People are passionate about their food. They never miss an opportunity try different varieties of food.
-There is a plethora of cooking resources available online as well as print medium. However, people's appetite
+People are passionate about their food.  They never miss an opportunity to try different varieties of food.
+There is a plethora of cooking resources available online as well as printed materials.  However, people's appetite
 about food never stops. Cookerish has developed its website to provide its users an opportunity to post their
 reciepes and, at the same time, try recipes posted by others.  Here they can search, view, add, edit and delete
 recipes.
 
 # <a name="ux"></a> UX
 The primary objective of Cookerish is to provide its users a user-friendly, intuitive website capable of providing 
-all required information about how to use the website and play the quiz within a user-friendly platform.
+all required information about how to use the website within a user-friendly platform.
 ## <a name="Strategy"></a> Strategy
 ### **New site user's goals:**
 * As a new site user, I want to be able to browse and search for recipes 
 * As a new site user, I want to get inspiration for a recipe to make
 * As a new site user, I want to be able to understand the intent of the page
-* As a new site user, I want I want to understand easily how to navigate the page and access the facilities provided
+* As a new site user, I want to understand easily how to navigate the page and access the facilities provided
 ### **Returning user's goals**
 * As a returning site user, I want to be able to log in
 * As a returning site user, I want to be able to view my recipes
@@ -45,25 +45,25 @@ all required information about how to use the website and play the quiz within a
 ### **Site owner'as goals:**
 * As a site owner, I want recipes added via the site to be stored in the correct format in the database
 * As a site owner, I want to be able to see who has added each recipe
+* As a site owner, I want to know how many reciepes were added
+
 
 ## <a name="scope"></a> Scope
 **Functional requirements:**
 #### For ease of use:
 * Navigation bar which is simple and easy to navigate
-* A search Function
+* A search Function to search for recipes
 #### To ensure the database is up to date and editable:
 * Function to add a recipe
 * Function to edit a recipe
 * Function to delete a recipe
 * For the recipes to be only editable by the creator
+* User with admin status is able to add, delete and edit recipe categories
 
 **Content requirements:**
 #### To ensure the site is visually appealing and to draw the user's eye:
 * Images of recipes
-* Clear, crisp colours which do not detract from or make the text unreadable
-
-### For usability
-* For the time commitment to be clear as this is often a factor in a recipe choice
+* Color scheme was chosen to make the site attractive, memorable and trustworthy. 
 
 ## <a name="structure"></a> Structure
 **Interaction design:**
@@ -99,11 +99,11 @@ The intention of the website is to be clean, crisp and clear
 Feature | Details
 --------|--------
 Log in | The user can register and log into their own account with personalised features
-Log out | There is a log out functionality on the page - this is especially important for users of a shared device
+Log out | There is a log out functionality on the page which helps prevent other users from accessing the system
 Add recipe | Users can contribute to the site via the add recipe form
-Edit recipe form | Users are able to edit their own recipes. An important note here is that users can only edit their own recipes
-Delete a recipe | Users are abel to delete their own recipes. As above, this can only be done with the user's own recipes
-Search function | The users are able to search the recipe database by ingredient and recipe name. This function is available whether a user is logged in/registered or not
+Edit recipe form | Users are able to edit their own recipes. 
+Delete a recipe | Users are abel to delete their own recipes. 
+Search function | Every user of the website is able to search the recipe database by ingredient or recipe name without being logged in.
 
 ## <a name="left-to"></a> Features left to implement
 Feature | Details
@@ -128,7 +128,6 @@ Feature | Details
 * Google Chrome
 * Microsoft Edge
 * FireFox
-* Safari
 * Responsinator[http://www.responsinator.com/]
 * Chrome Dev Tools
 
@@ -137,50 +136,63 @@ Feature | Details
 # <a name="testing"></a> Testing
 ### **New site user testing:**
 * As a new site user, I want to be able to browse and search for recipes 
-    1. Upon entering the site, users are automatically greeted with the page title and sub heading
+    1. Upon entering the site, users are automatically greeted with the page title, carousal image slide and sub heading
     1. There is a clear call to action to browse the recipes
 * As a new site user, I want to get inspiration for a recipe to make
     1. The images and cook/prep times within the page provide inspiration to the site user
 * As a new site user, I want to be able to understand the intent of the page
-    1. Upon entering the page, it is clear the site is designed around food and cooking. The carousel content and background image point the user to this
+    1. Upon entering the page, it is clear the site is designed around food and cooking. The carousel image point the user to this
 * As a new site user, I want I want to understand easily how to navigate the page and access the facilities provided
     1. The navigation bar has clear and easy to understand links. These links are also dynamic to whether the user is signed in or not so they are only seeing the relevant options
 ### **Returning user testing**
 * As a returning site user, I want to be able to log in
     1. Upon entering the site, there is the option in the nav bar to register and log in
 * As a returning site user, I want to be able to view my recipes
-    1. the user's profile page provides all of the recipes the user has submitted
+    1. The user's profile page provides all of the recipes the user has submitted
 * As a returning site user, I want to be able to edit and delete my recipes
-    1. The recipes the user has submitted all show buttons to edit and delete the recipes. This is not visible to other users
+    1. The recipes the user has submitted show buttons to edit and delete the recipes. This is not visible to other users
 * As a returning site user, I want to be able to add new recipes
     1. The form to enter a new recipe allows the user to instantly add a recipe to the site in the required format
+* As a returning site user, I want to be able to add new ingredients to an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly add a new ingredients
+* As a returning site user, I want to be able to delete unwanted ingredients from an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly delete unwanted ingredients from the recipe
+* As a returning site user, I want to be able to add new tools to an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly add a new tools
+* As a returning site user, I want to be able to delete unwanted tools from an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly delete unwanted tools from the recipe
+* As a returning site user, I want to be able to add new steps to the methos of an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly add a new steps to the method of an existig recipe
+* As a returning site user, I want to be able to delete unwanted steps from the methods of an existing recipe
+    1. The form to edit an existing recipe allows the user to instantly delete unwanted steps from the method of an existing recipe
+
+
 ### **Site owner testing:**
 * As a site owner, I want recipes added via the site to be stored in the correct format in the database
-    1. The form to add or edit a recipe validates the content to ensure all fields are complete and are in the correct format
+    1. The form to add or edit a recipe validates the content to ensure all essential fields are complete and are in the correct format
+    2. Some fields do not require values, for it is upto the user to determine whether it is required or not. For example, Recipe Tip. When there is nothing to mention in the Tip field, user is able to leave this field blank.
 * As a site owner, I want to be able to see who has added each recipe
-    1. When a recipe is submitted, the user's _Id is stored in the database. This shows on the site as the user's username on each recipe
+    1. When a recipe is submitted, the user's username is stored in the database. This username is shown on the site below each recipe
 
 ### **Performance testing:**
 1. Tested website responsiveness using http://www.responsinator.com/
     1. Results: The website is responsive to all device sizes without any unnecessary x-scroll. 
 1. Tested the image size to ensure no image is to large and impacting the website loading times. I used the Google Dev Tools - Network
-    1. Results: The site loading time is sub optimal. The total website loading time is 1.30s which can be improved
+    1. Results: The site loading time is sub optimal. The total website loading time is 1.20s which can be improved
 1. Tested the images on the all recipes page using Google Dev Tools - Lighthouse
-    1. Results: An issue highlighted using this tool is the image formats used. Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption.
+    1. Results: It has found that JPEG and PNG files take more time to load.
 1. All HTML pages were tested using https://jigsaw.w3.org/css-validator/validator
-    1. All but the 'base' template resulted in errors that the Lang Doctype and Title were missing. This was to be expected as the details were being extended from the base template to did not need to be added
+    1. No errors were found
     1. All HTML pages resulted in errors where the Jinja template language was used
-    1. None of these are actual errors within the code
+        1. None of these are actual errors within the code
 1. Tested the CSS using http://www.css-validator.org/
     1. No errors were found
-1. Tested the website on the Google Chrome browser Version 87.0.4280.88 (Official Build) (64-bit)
+1. Tested the website on the Google Chrome browser Version 93.0.4577.63(Official Build) (64-bit)
     1. Results: The website was responsive and the elements performed in the way they were intended to
-1. Tested the website on the Microsoft Edge browser Version Version 87.0.664.66 (Official build) (64-bit)
+1. Tested the website on the Microsoft Edge browser Version Version 93.0.961.47  (Official build) (64-bit)
     1. Results: The website was responsive and the elements performed in the way they were intended to
-1. Tested the website on the Firefox browser Version 82.0.3 (64-bit)
+1. Tested the website on the Firefox browser Version 92.0 (64-bit)
     1. Results: The website was responsive and the elements performed in the way they were intended to
-1. Tested the form validation worked correctly on each of the above browsers
-    1. Results: The form correctly sent when the fields were completed as they should have been and did not when the fields had not been completed
 
 # <a name="deployment"></a> Deployment
 ## <a name="github"></a> Github Pages
@@ -232,7 +244,7 @@ echo web: python app.py > Procfile
 |IP|`0.0.0.0`|
 |PORT|`5000`|
 |SECRET_KEY|`<app secret key>`|
-|MONGO_URI|mongodb+srv://root:uSerpwd1@cluster0.szqmk.mongodb.net/recipe_manager?retryWrites=true&w=majority
+|MONGO_URI|mongodb+srv://root:userpassword@cluster0.szqmk.mongodb.net/recipe_manager?retryWrites=true&w=majority
 |MONGO_DBNAME|`recipe_manager`|
 
 
@@ -256,11 +268,8 @@ Images used in this website were taken from the following sites:
 
 ## Layout & Style
 
-Following sites were consulted to design the layout of the site pages:
-- [BBC Quizzes](https://www.bbc.co.uk/cbbc/quizzes)
-- [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k)
-- [Kindson The Tech Pro](https://www.youtube.com/watch?v=2Bpiluefkh8)
-- [W3Schools](https://www.w3schools.com/)
+Following site/s were consulted to design the layout of the site pages:
+- [BBC Food](https://www.bbc.co.uk/food)
 
 ## Coding
 
