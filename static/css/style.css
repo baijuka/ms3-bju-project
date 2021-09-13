@@ -17,6 +17,10 @@ body {
     line-height: 2;
 }
 
+nav ul li a:hover {
+    color: rgb(238, 232, 156);
+ }
+
 ul li.list {
     margin-left: 35px;
     list-style-type:disc;
@@ -57,10 +61,27 @@ footer .social {
     justify-content: center;
     }
 
+footer .social i {
+    font-size: 1.5em !important;
+    }
+
 footer .social a {
     padding-left: 25px;
     padding-right: 25px;
     }
+
+.social i:hover{
+   color: orange !important; 
+   transition: 0.8s;
+}
+
+#procook {
+    font-size: 1.2em;
+}
+#procook:hover {
+   color: orange !important; 
+   transition: 0.8s;
+}
 
 @media only screen and (max-width: 600px) {
     img {
