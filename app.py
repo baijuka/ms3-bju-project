@@ -191,7 +191,7 @@ def add_category():
             return redirect(url_for("add_category"))
 
         category = {
-            "category_name": request.form.get('category_name')
+            "category_name": request.form.get('category_name').lower()
         }
         mongo.db.categories.insert_one(category)    
         flash("New Category Added")

@@ -12,13 +12,13 @@
     <div class="row" style="margin-top: 3%;">
         {% for category in categories %}
             <div class="col s12 m3" style="min-width: 278px; max-width: 400px;">
-                <div class="card blue-grey center-align">
+                <div class="card light-blue darken-3 center-align">
                     <div class="card-content white-text">
                         <span class="card-title">{{ category.category_name }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn lime accent-1" style="height: 28px; padding:3px 10px;">Edit</a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{loop.index}}">
+                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn yellow lighten-3" style="height: 30px; padding:3px 10px;">Edit</a>
+                        <button type="button" class="btn deep-orange lighten-1 text-white" data-bs-toggle="modal" data-bs-target="#modal-{{loop.index}}">
                             Delete
                           </button>                          
                     </div>

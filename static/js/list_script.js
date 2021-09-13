@@ -85,3 +85,4 @@ function edit_add_method(event)
         e.preventDefault();
         $(this).parent('div').remove();
     });
+
