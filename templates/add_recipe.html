@@ -101,17 +101,17 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
                     <input id="image_source" name="image_source" minlength="0" maxlength="150" type="text" class="validate">
                     <label for="image_source">Image URL</label>
                 </div>
             </div>
             <div class="row" >
                 <div class="col s12 center-align" style="display: block;">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <button id="btn-add-recpe" type="submit" class="btn-large light-blue darken-1 text-shadow" style="margin-bottom: 5px;">
                         Add Recipe <i class="fas fa-plus-square right"></i>
                     </button>
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">Cancel</a>
+                    <a id="cancel-recipe" href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">Cancel</a>
                 </div>
             </div>
         </form>
