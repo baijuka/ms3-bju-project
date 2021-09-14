@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-9"><h4>{{ loop.index}}. {{ recipe.recipe_name }}</h4><br>
         </div>
-          <div class="row">
+          <div class="row" style="display: block;">
             <div class="col m6"> <img src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%; max-height: 500px;">
             </div>
             <div class="col m6">
@@ -64,7 +64,7 @@
                     {% endfor %}
                 </ul> 
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding-right: 5px;">
             <p><span style="font-weight: bold;">Method:</span></p>
                 <ol>
                     {% for step in recipe.method %}

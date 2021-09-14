@@ -58,7 +58,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
                     <input id="tools_required" minlength="1" maxlength="50" type="text" class="validate">
-                    <label for="tools_required">Tools Required (Type the tool name here and then click 'Click to Add')</label>
+                    <label for="tools_required">Tools Required</label>
                     <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" style="float: right;">Click to Add</button>
                     <div class="container">
                          <div id="tools_div">
@@ -70,7 +70,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
                         <input id="ingredients" minlength="1" maxlength="50" type="text" class="validate">
-                        <label for="ingredients">Ingredients (Type the ingredient name here and then click 'Click to Add')</label>
+                        <label for="ingredients">Ingredients</label>
                         <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" style="float: right;">Click to Add</button>
                         <div class="container">
                             <div id="ingredients_div">
@@ -83,8 +83,8 @@
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
                     <textarea id="method" minlength="5"
                         maxlength="500" class="materialize-textarea"></textarea>
-                    <label for="method">Method (Type the instruction here and then click 'Click to Add')</label>
-                    <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Click to Add</button>
+                    <label for="method">Method</label>
+                    <button id="btn_method" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Click to Add</button>
                     <div class="container">
                         <div id="method_div">
                         </div>
@@ -106,8 +106,8 @@
                     <label for="image_source">Image URL</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 center-align">
+            <div class="row" >
+                <div class="col s12 center-align" style="display: block;">
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                         Add Recipe <i class="fas fa-plus-square right"></i>
                     </button>
@@ -115,6 +115,8 @@
                 </div>
             </div>
         </form>
+        
+        <p style="color: rgb(7, 71, 167); margin-top: 20px; font-size: 1.2em;">NOTE: For Tools, Ingredients & Method - Type each item in the box provided and then click 'Click to Add' button to accept the item and repeat for multiple items</p>
     </div>
     
 
