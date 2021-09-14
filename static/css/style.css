@@ -3,11 +3,26 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
+html, body {
     background-color: rgb(248, 248, 248);
-    overflow-x: hidden;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    margin: 0;
+}
+
+.card-panel {
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .text-shadow {
