@@ -144,6 +144,9 @@ footer .social a {
         max-width: 80px;
         font-size: .7em;
     }
+    .btn-large {
+        margin-top: 5px;
+    }
     .container {
         padding-left: 1px;
         padding-right: 1px;
