@@ -232,7 +232,7 @@ Pagination | Users will be able to choose recipes by using pagination feature.  
 
 To deploy the app to Heroku from its [GitHub repository](https://github.com/baijuka/ms3-bju-project), the following steps were taken:
 
-1. From the GitPod terminal, create **requirements.txt** and **Procfile** using these commands:
+1. From the GitPod terminal, create **requirements.txt** and **Procfile** using the following commands:
 
 ```console
 pip3 freeze --local > requirements.txt
