@@ -11,7 +11,7 @@
 1. [Features](#features)
     1. [Existing Features](#existing-features)
     1. [Features left to implement](#left-to)
-1. [Bugs](#bugs)
+1. [Known Bugs](#bugs)
 1. [Technologies used](#tech)
 1. [Testing](#testing)
 1. [Deployment](#deployment)
@@ -118,6 +118,13 @@ Image Upload | Users will be able to upload their recipe images on the website r
 Pagination | Users will be able to choose recipes by using pagination feature.  Contents to be divided as pages as the number of recipes posted grows.
 User Account Deletion | Users will be able to close their account by deleting their userids.
 User Feedback | Users will be able to send their feedback and suggestions about the Cookerish website to the business owner.
+
+# <a name="bugs"></a> Bugs
+* On some mobiles a tiny white gap can be seen on the right side of some sections in the home page.
+* Size of advertisement images at the bottom of the home page isn't scale down in proportion to the size of the viewport on iPad.
+* Deleting and Changing category names do not update the categoryname fields in the existing recipe documents that has already used the deleted/edited categoryname in the database.
+* At the moment there is only one user with username 'admin' has the right to manage categories.
+* Update and Cancel Buttons do not scale down in size on small device, which was found to be a Materialize issue.
 
 # <a name="tech"></a> Technologies Used
 
