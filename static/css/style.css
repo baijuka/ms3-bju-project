@@ -177,4 +177,8 @@ footer .social a {
         margin-top: 3px;
         margin-bottom: 5px;
     }  
+    .advt img {
+        max-width: 70%;
+        height: auto;
+    }
 }
