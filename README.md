@@ -117,6 +117,7 @@ User Review | Users will have the opportunity to have their say on each recipe p
 Image Upload | Users will be able to upload their recipe images on the website rather than adding image address.
 Pagination | Users will be able to choose recipes by using pagination feature.  Contents to be divided as pages as the number of recipes posted grows.
 User Account Deletion | Users will be able to close their account by deleting their userids.
+User Feedback | Users will be able to send their feedback and suggestions about the Cookerish website to the business owner.
 
 # <a name="tech"></a> Technologies Used
 
