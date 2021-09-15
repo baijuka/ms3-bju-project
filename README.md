@@ -252,7 +252,7 @@ echo web: python app.py > Procfile
 |:-----|:-----|
 |IP|`0.0.0.0`|
 |PORT|`5000`|
-|SECRET_KEY|`<app secret key>`|
+|SECRET_KEY|`<app_secret_key>`|
 |MONGO_URI|mongodb+srv://root:userpassword@cluster0.szqmk.mongodb.net/recipe_manager?retryWrites=true&w=majority
 |MONGO_DBNAME|`recipe_manager`|
 
