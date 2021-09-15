@@ -73,7 +73,12 @@
                               </div>                                 
                             </div>  
                             <div class="row" style="display: block;">
-                                <div class="col m6"> <img id="img-edit" src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%; max-height: 500px;">
+                                <div class="col m6"> 
+                                    {% if recipe.image_source %}
+                                        <img id="img-edit" src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%; max-height: 500px;">
+                                    {% else %}
+                                        <img id="img-edit" src="../static/images/image_default.jpg" alt="curry image" style="max-width: 100%; max-height: 500px;">
+                                    {% endif %}
                                 </div>
                                 <div class="col m6">
                                     <p><span style="font-weight: bold;">Category:</span> {{ recipe.category_name }}</p>
