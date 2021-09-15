@@ -220,6 +220,9 @@ def delete_category(category_id):
     flash("Category Successfully Deleted")
     return redirect(url_for('get_categories'))
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'),404
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
