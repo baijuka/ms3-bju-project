@@ -278,7 +278,7 @@ Images used in this website were taken from the following sites:
 
 ## Layout & Style
 
-Following site/s were used as reference to design the layout of the site pages:
+Following site was used as reference to design the layout of the site pages:
 - [BBC Food](https://www.bbc.co.uk/food)
 
 ## Coding
