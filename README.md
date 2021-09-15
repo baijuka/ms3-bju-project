@@ -84,7 +84,9 @@ Wireframes for desktop, tablet and mobile deiveces were created using Balsamiq D
 -   Home Page Wireframe -<a href="./static/wireframes/recipes.pdf" target="_blank" >Recipies</a>
 -   Profile Page - <a href="./static/wireframes/profile.pdf" target="_blank" >Profile</a>
 -   Add Recipe Page - <a href="./static/wireframes/add_recipe.pdf" target="_blank" >Add Recipe</a>
+-   Edit Recipe Page - <a href="./static/wireframes/edit_recipe.pdf" target="_blank" >Add Recipe</a>
 -   User Registration Page - <a href="./static/wireframes/register.pdf" target="_blank" >Register</a>
+-   Manage Categoris Page - <a href="./static/wireframes/categories.pdf" target="_blank" >Register</a>
 
 
 ## <a name="surface"></a> Surface
@@ -104,10 +106,17 @@ Add recipe | Users can contribute to the site via the add recipe form
 Edit recipe form | Users are able to edit their own recipes. 
 Delete a recipe | Users are abel to delete their own recipes. 
 Search function | Every user of the website is able to search the recipe database by ingredient or recipe name without being logged in.
+Manage Categories | The user with username **'admin'** and password **'password123'** is able to Add, Delete and Edit categories of recipes.  Username **'admin'** was already created and can be logged in using the password **'passwrod123'** for the assessment purpose. 
+
 
 ## <a name="left-to"></a> Features left to implement
 Feature | Details
 --------|--------
+User Rating | Users will be able to rate recipes posted on the website.
+User Review | Users will have the opportunity to have their say on each recipe posted on the Cookerish website.
+Image Upload | Users will be able to upload their recipe images on the website rather than adding image address.
+Pagination | Users will be able to choose recipes by using pagination feature.  Contents to be divided as pages as the number of recipes posted grows.
+
 
 # <a name="tech"></a> Technologies Used
 
@@ -170,14 +179,14 @@ Feature | Details
 ### **Site owner testing:**
 * As a site owner, I want recipes added via the site to be stored in the correct format in the database
     1. The form to add or edit a recipe validates the content to ensure all essential fields are complete and are in the correct format
-    2. Some fields do not require values, for it is upto the user to determine whether it is required or not. For example, Recipe Tip. When there is nothing to mention in the Tip field, user is able to leave this field blank.
+    2. Some fields do not require values, for it is upto the user to determine whether it is required or not. For example, Recipe Tip or Image URL. When there is nothing to mention in the Tip field, or there is no image URL available, users can leave the field blank.
 * As a site owner, I want to be able to see who has added each recipe
     1. When a recipe is submitted, the user's username is stored in the database. This username is shown on the site below each recipe
 
 ### **Performance testing:**
 1. Tested website responsiveness using http://www.responsinator.com/
     1. Results: The website is responsive to all device sizes without any unnecessary x-scroll. 
-1. Tested the image size to ensure no image is to large and impacting the website loading times. I used the Google Dev Tools - Network
+1. Tested the image size to ensure no image is to large and impacting the website loading times. Google Dev Tools - Network was used for this purpose.
     1. Results: The site loading time is sub optimal. The total website loading time is 1.20s which can be improved
 1. Tested the images on the all recipes page using Google Dev Tools - Lighthouse
     1. Results: It has found that JPEG and PNG files take more time to load.
@@ -199,8 +208,8 @@ Feature | Details
 1. Create a new repository or access an existing repository
 1. Click the green Gitpod button to launch the project in Gitpod
 1. Create an index.html file
-1. Add the file to the staging area using the git add Functional
-1. Commit the file using the git commit function, adding an appropriate commentary
+1. Add the file to the staging area using the git add command
+1. Commit the file using the git commit function, adding an appropriate message
 1. Push the file to GitHub using the git commit and git push functions
 1. Refresh your GitHub repository and click the 'Settings' tab
 1. Scroll to the GitHub Pages section and select a publishing source
@@ -268,12 +277,12 @@ Images used in this website were taken from the following sites:
 
 ## Layout & Style
 
-Following site/s were consulted to design the layout of the site pages:
+Following site/s were used as reference to design the layout of the site pages:
 - [BBC Food](https://www.bbc.co.uk/food)
 
 ## Coding
 
-Following sites were consulted to develop coding strategy for the site:
+Following sites were used as references to develop coding strategy for the site:
 - [Code Institute Course Module](https://codeinstitute.net/)
 - [W3Schools](https://www.w3schools.com/)
 - [Materialize](https://materializecss.com/)
