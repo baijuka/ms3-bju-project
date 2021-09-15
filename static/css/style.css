@@ -125,6 +125,10 @@ footer .social a {
         overflow-x: hidden;
     }
     
+    .sidenav {
+        width: auto;
+        height: auto;
+    }
     .card-panel {
         margin-left: 5px;
         margin-right: 5px;
