@@ -91,14 +91,20 @@ def logout():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
-      {"username": session["user"]})
   
-    user_recipe = list(mongo.db.recipes.find(
-      {"created_by": session["user"]}))
+    user = mongo.db.users.find_one({"username": session["user"]})
+    recipes = list(mongo.db.recipes.find())
+    if session["user"]:
+        for recipe in recipes:
+            try:
+                recipe["user_id"] = mongo.db.users.find_one(
+                    {"_id": recipe["user_id"]})["username"]
+            except:
+                pass
+        return render_template(
+            "profile.html", username=username.capitalize(), recipes=recipes, user=user)
 
-    return render_template("profile.html", user=username, user_recipe=user_recipe)
-
+    return redirect(url_for("login"))
 
 
 @app.route("/add_recipe", methods=["POST", "GET"])
