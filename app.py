@@ -92,6 +92,7 @@ def logout():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users.find_one({"username": session["user"]})
+    categories = mongo.db.categories.find()
     recipes = list(mongo.db.recipes.find())
     if session["user"]:
         for recipe in recipes:
@@ -101,7 +102,7 @@ def profile(username):
             except:
                 pass
         return render_template(
-            "profile.html", username=username.capitalize(), recipes=recipes, user=user)
+            "profile.html", username=username.capitalize(), recipes=recipes, user=user, categories=categories)
 
     return redirect(url_for("login"))
 
@@ -112,7 +113,8 @@ def add_recipe():
         user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
-            "category_name": request.form.get("category_name"),
+            #"category_name": request.form.get("category_name"),
+             "category_id": ObjectId(request.form.get("category_id")),
             "cook_time": request.form.get("cook_time"),
             "prep_time": request.form.get("prep_time"),
             "tools_required": request.form.getlist("tools"),
