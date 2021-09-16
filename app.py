@@ -108,7 +108,7 @@ def profile(username):
 
 @app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
-    if request.method=="POST":
+    if request.method == "POST":
         user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
             "recipe_name": request.form.get("recipe_name"),

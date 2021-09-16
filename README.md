@@ -101,7 +101,7 @@ The intention of the website is to be clean, crisp and clear
 * Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
 
 ### Mockups
-<a href="./static/mockups/mockup.pdf" target="_blank" >Recipies</a>
+* <a href="./static/mockup/mockup.pdf" target="_blank" >Mockups</a>
 
 # <a name="features"></a> Features
 ## <a name="existing-features"></a> Existing Features
