@@ -74,6 +74,18 @@ ul li a {
     display: block;
     margin: 10px auto;
 }
+#btn-register{
+    max-width: 40%; 
+    margin: 0 auto;"
+}
+
+
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+ }
 footer h3 {
     font-size: small;
     }
@@ -105,10 +117,6 @@ footer .social a {
 #procook:hover {
    color: orange !important; 
    transition: 0.8s;
-}
-
-footer {
-    margin-bottom: 0 !important;
 }
 
 
@@ -172,7 +180,22 @@ footer {
     footer {
         font-size: .8em;
     }
+    #btn-register{
+        max-width: 50%; 
+        margin: 0 auto;"
+    }
+    #footer {
+        max-height: 25%;
+    }
 }
+
+@media only screen and (max-width: 300x){
+    #btn-register{
+        max-width: 50%; 
+        margin: 0 auto;
+    }
+}
+
 @media only screen and (max-width: 769px) {
     #method {
         width: 100%;
