@@ -14,7 +14,7 @@
             <div class="col s12 m3" style="min-width: 278px; max-width: 400px;">
                 <div class="card light-blue darken-3 center-align">
                     <div class="card-content white-text">
-                        <span class="card-title">{{ category.category_name }}</span>
+                        <span class="card-title">{{ category.category_name.capitalize() }}</span>
                     </div>
                     <div class="card-action">
                         <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn yellow lighten-3" style="height: 30px; padding:3px 10px;">Edit</a>

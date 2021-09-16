@@ -41,10 +41,12 @@
             <div class="card-panel" style="padding-left: 5px; padding-right: 5px;">
                 <div class="dark-grey-text text-darken-4">
                     <div class="container">
+                    {% set count = namespace(value=0) %}
                     {% for recipe in recipes %}
                     {% if session.user|lower == recipe.user_id|lower %}
+                        {% set count.value = count.value +1 %}
                         <div class="row">
-                            <div class="col-8"><h4>{{ loop.index}}. {{ recipe.recipe_name }}</h4><br>
+                            <div class="col-8"><h4>{{ count.value }}. {{ recipe.recipe_name }}</h4><br>
                             </div>
                             <div class="col-4">
                              <button type="button" onClick="window.location.href='{{ url_for('edit_recipe',recipe_id=recipe._id) }}';" class="btn btn-primary" style="padding: 3px 10px;">
