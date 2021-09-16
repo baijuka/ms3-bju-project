@@ -107,6 +107,11 @@ footer .social a {
    transition: 0.8s;
 }
 
+footer {
+    margin-bottom: 0 !important;
+}
+
+
 @media only screen and (max-width: 600px) {
     img {
         width: 70%;

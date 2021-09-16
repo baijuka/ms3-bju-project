@@ -85,12 +85,12 @@ all required information about how to use the website within a user-friendly pla
 
 ## <a name="skeleton"></a> Skeleton
 Wireframes for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
--   Home Page Wireframe -<a href="./static/wireframes/recipes.pdf" target="_blank" >Recipies</a>
--   Profile Page - <a href="./static/wireframes/profile.pdf" target="_blank" >Profile</a>
--   Add Recipe Page - <a href="./static/wireframes/add_recipe.pdf" target="_blank" >Add Recipe</a>
--   Edit Recipe Page - <a href="./static/wireframes/edit_recipe.pdf" target="_blank" >Add Recipe</a>
--   User Registration Page - <a href="./static/wireframes/register.pdf" target="_blank" >Register</a>
--   Manage Categoris Page - <a href="./static/wireframes/categories.pdf" target="_blank" >Register</a>
+-   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Recipies</a>
+-   Profile Page - <a href="./static/wireframe/profile.pdf" target="_blank" >Profile</a>
+-   Add Recipe Page - <a href="./static/wireframe/addrecipe.pdf" target="_blank" >Add Recipe</a>
+-   Edit Recipe Page - <a href="./static/wireframe/editrecipe.pdf" target="_blank" >Edit Recipe</a>
+-   User Registration Page - <a href="./static/wireframe/register.pdf" target="_blank" >Register</a>
+-   Manage Categoris Page - <a href="./static/wireframe/categories.pdf" target="_blank" >Categories</a>
 
 
 ## <a name="surface"></a> Surface
