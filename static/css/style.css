@@ -79,13 +79,6 @@ ul li a {
     margin: 0 auto;"
 }
 
-
-
-#footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
- }
 footer h3 {
     font-size: small;
     }
@@ -185,7 +178,7 @@ footer .social a {
         margin: 0 auto;"
     }
     #footer {
-        max-height: 25%;
+        min-height: 25%;
     }
 }
 
@@ -194,6 +187,11 @@ footer .social a {
         max-width: 50%; 
         margin: 0 auto;
     }
+    #footer {
+        position:absolute;
+        bottom:0;
+        width:100%;
+     }
 }
 
 @media only screen and (max-width: 769px) {
