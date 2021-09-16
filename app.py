@@ -91,7 +91,6 @@ def logout():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-  
     user = mongo.db.users.find_one({"username": session["user"]})
     recipes = list(mongo.db.recipes.find())
     if session["user"]:
@@ -136,6 +135,7 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET","POST"])
 def edit_recipe(recipe_id):
+    user = mongo.db.users.find_one({"username": session["user"]})
     if request.method=="POST":
         submit = {
             "recipe_name": request.form.get("recipe_name"),
@@ -149,7 +149,7 @@ def edit_recipe(recipe_id):
             "cuisine": request.form.get("cuisine"),
             "date_posted": datetime.now(),
             "recipe_tip": request.form.get("recipe_tip"),
-            "created_by": session["user"],
+            "user_id": ObjectId(user["_id"]),
             "image_source": request.form.get("image_source")
         }
         mongo.db.recipes.update({"_id":ObjectId(recipe_id)}, submit)
