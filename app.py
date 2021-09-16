@@ -23,6 +23,12 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
+    for recipe in recipes:
+        try:
+            recipe["user_id"] = mongo.db.users.find_one(
+                {"_id": recipe["user_id"]})["username"]
+        except:
+            pass
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -98,6 +104,7 @@ def profile(username):
 @app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
     if request.method=="POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
@@ -110,7 +117,7 @@ def add_recipe():
             "cuisine": request.form.get("cuisine"),
             "date_posted": datetime.now(),
             "recipe_tip": request.form.get("recipe_tip"),
-            "created_by": session["user"],
+            "user_id": ObjectId(user["_id"]),
             "image_source": request.form.get("image_source")
         }
         mongo.db.recipes.insert_one(recipe)

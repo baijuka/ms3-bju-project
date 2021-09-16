@@ -81,11 +81,11 @@
         </div>
     </div>
     <!-- bootstrap end -->
-    <p><span style="font-weight: bold; padding-left: 3px;">Tip: </span>{{ recipe.recipe_tip }}</p>   
-    <p><span style="font-weight: bold; padding-left: 3px;">Posted on:</span> {{ recipe.date_posted.strftime('%d-%m-%Y') }}</p> 
-    <p><span style="font-weight: bold; padding-left: 3px;">Created by:</span> {{ recipe.created_by }}</p>
-    <hr style="color: rgb(212, 207, 207);">
-    <br><br>
+        <p><span style="font-weight: bold; padding-left: 3px;">Tip: </span>{{ recipe.recipe_tip }}</p>   
+        <p><span style="font-weight: bold; padding-left: 3px;">Posted on:</span> {{ recipe.date_posted.strftime('%d-%m-%Y') }}</p> 
+        <p><span style="font-weight: bold; padding-left: 3px;">Created by:</span> {{ recipe.user_id }}</p>
+        <hr style="color: rgb(212, 207, 207);">
+        <br><br>
     {% endfor %}
   {% else %}
         <h3 class="red-text text-darken-4 center-align">No Results Found</h3>

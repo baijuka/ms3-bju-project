@@ -84,7 +84,7 @@ all required information about how to use the website within a user-friendly pla
 * All information is appropriate and relative to the subject and not misleading or hard to find
 
 ## <a name="skeleton"></a> Skeleton
-Wireframes for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
+**Wireframes** for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
 -   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Recipies</a>
 -   Profile Page - <a href="./static/wireframe/profile.pdf" target="_blank" >Profile</a>
 -   Add Recipe Page - <a href="./static/wireframe/addrecipe.pdf" target="_blank" >Add Recipe</a>
@@ -99,6 +99,9 @@ The intention of the website is to be clean, crisp and clear
 * The font family chosen is 'Roboto' which is simple and allowing letters to be settled into their natural width.
 * The colour scheme selected is shades of Materialze blue-grey and off-white with black font. Shades of blue, orange and red were used for buttons to match the context.
 * Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
+
+### Mockups
+<a href="./static/mockups/mockup.pdf" target="_blank" >Recipies</a>
 
 # <a name="features"></a> Features
 ## <a name="existing-features"></a> Existing Features
