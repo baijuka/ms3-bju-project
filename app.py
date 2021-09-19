@@ -23,13 +23,14 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
+    categories = list(mongo.db.categories.find())
     for recipe in recipes:
         try:
             recipe["user_id"] = mongo.db.users.find_one(
                 {"_id": recipe["user_id"]})["username"]
         except:
             pass
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
 @app.route("/search", methods=["GET", "POST"])
