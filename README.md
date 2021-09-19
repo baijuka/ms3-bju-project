@@ -122,16 +122,14 @@ Feature | Details
 User Rating | Users will be able to rate recipes posted on the website.
 User Review | Users will have the opportunity to have their say on each recipe posted on the Cookerish website.
 Image Upload | Users will be able to upload their recipe images on the website rather than adding image address.
-Pagination | Users will be able to choose recipes by using pagination feature.  Contents to be divided as pages as the number of recipes posted grows.
-User Account Deletion | Users will be able to close their account by deleting their userids.
+Pagination | Users will be able to choose recipes by using pagination feature.  Contents to be divided pagewise as the number of recipes posted grows.
+User Account Deletion | Users will be able to close their account by deleting their user account.
 User Feedback | Users will be able to send their feedback and suggestions about the Cookerish website to the business owner.
 
 # <a name="bugs"></a> Bugs
-* Issue - On some mobiles a tiny white gap can be seen on the right side of some sections in the home page.
+* Issue - On some mobiles a tiny white gap can be seen on the right side of some sections of the home page.
 * Size of advertisement images at the bottom of the home page isn't scale down in proportion to the size of the viewport on iPad. 
     - Fix - Issue fixed by setting the 'max-with: 70%;' in the media query.
-* Deleting and Changing category names do not update the categoryname fields in the existing recipe documents that has already used the deleted/edited categoryname in the database.
-    - Fix - Update all documents that have used the deleted/edited value in the recipes collection with 'unclassified' for deleted categoryname and new value for the edited category name.
 * At the moment there is only one user with username 'admin' has the right to manage categories.
 * Update and Cancel Buttons do not scale down in size on small device, which was found to be a Materialize issue.
 
