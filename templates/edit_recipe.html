@@ -15,13 +15,13 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                    <select id="category_name" name="category_name" class="validate" required>
+                    <select id="category_id" name="category_id" class="validate" required>
                       <option value="" disabled>Choose Category</option>
                       {% for category in categories %}
-                        {% if category.category_name == recipe.category_name %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% if category._id == recipe.category_id %}
+                            <option value="{{ category._id }}" selected>{{ category.category_name }}</option>
                         {% else %}
-                            <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                            <option value="{{ category._id }}">{{ category.category_name}}</option>
                         {% endif %}
                       {% endfor %}
                     </select>
