@@ -29,11 +29,12 @@
                 <div class="modal-dialog">
                   <div class="modal-content"  style="background-color: rgb(255, 255, 255);">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modalLabel" style="color: rgb(250, 108, 14);">Delete Category!</h5>
+                      <h5 class="modal-title" id="modalLabel" style="color: rgb(250, 108, 14);">Delete category {{ category.category_name.capitalize() }}</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <p style="color: rgb(0, 89, 255);">Are you sure, you want to delete category?</p>
+                      <p style="color: rgb(0, 89, 255);">Deleting category {{ category.category_name.capitalize() }} will remove all recipes of this category from the system!</p>
+                       <p style="color: rgb(0, 89, 255);">Click <strong>OK</strong> to conirm or <strong>Cancel</strong> to ignore </p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" onClick="window.location.href='{{ url_for('delete_category', category_id=category._id) }}';" class="btn btn-primary" data-bs-dismiss="modal" style="padding: 3px 15px;">OK</button>

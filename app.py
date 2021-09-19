@@ -93,7 +93,7 @@ def logout():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     user = mongo.db.users.find_one({"username": session["user"]})
-    categories = mongo.db.categories.find()
+    categories = list(mongo.db.categories.find())
     recipes = list(mongo.db.recipes.find())
     if session["user"]:
         for recipe in recipes:
@@ -114,8 +114,7 @@ def add_recipe():
         user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
-            #"category_name": request.form.get("category_name"),
-             "category_id": ObjectId(request.form.get("category_id")),
+            "category_id": ObjectId(request.form.get("category_id").strip()),
             "cook_time": request.form.get("cook_time"),
             "prep_time": request.form.get("prep_time"),
             "tools_required": request.form.getlist("tools"),
@@ -133,7 +132,7 @@ def add_recipe():
         return redirect(url_for('profile', username=session['user']))
 
 
-    categories = mongo.db.categories.find().sort("category_name",1)
+    categories = list(mongo.db.categories.find().sort("category_name",1))
     return render_template("add_recipe.html", categories=categories)
 
 
@@ -161,7 +160,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for('profile', username=session['user']))
 
     recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("category_name",1)
+    categories = list(mongo.db.categories.find().sort("category_name",1))
     return render_template("edit_recipe.html", categories=categories,recipe=recipe)
 
 
@@ -232,7 +231,8 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id":ObjectId(category_id)})
+    mongo.db.categories.remove({"_id": ObjectId(category_id)}) 
+    mongo.db.recipes.remove({"category_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for('get_categories'))
 
