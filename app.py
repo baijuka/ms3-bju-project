@@ -37,6 +37,12 @@ def get_recipes():
 def search():
     query = request.form.get("recipe_query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    for recipe in recipes:
+        try:
+            recipe["user_id"] = mongo.db.users.find_one(
+                {"_id": recipe["user_id"]})["username"]
+        except:
+            pass
     return render_template("recipes.html", recipes=recipes)
 
 
