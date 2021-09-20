@@ -42,44 +42,44 @@
                 <li><h4 class="center-align blue-grey-text text-darken-4">Cookerish</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                 {% if session.user %}    
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        {% if session.user|lower == "admin"|lower %}
-                            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                    {% if session.user|lower == "admin"|lower %}
+                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                     {% endif %}
-            </ul>                
-        </header>
-
-        <section>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <h4 class="blue-grey lighten-5 center-align">{{ message }}</h4>
-                        </div>
-                    {% endfor %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
-            {% endwith %}
-        </section>
-        <main class="container">
-            {% block content %}
-            {% endblock %}
-        </main>
+            </ul>                
+    </header>
+
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="blue-grey lighten-5 center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
        
-        <footer class="page-footer blue-grey darken-1" id="footer">
-            <div class="container">
-              <div class="row">
+    <footer class="page-footer blue-grey darken-1" id="footer">
+        <div class="container">
+            <div class="row">
                 <div class="col l6 s12">
-                  <h5 class="white-text">Cookerish Recipes</h5>
-                  <p class="grey-text text-lighten-4">For your kitchen essentails visit <a href="https://www.procook.co.uk/" target="_blank" style="color: rgb(251, 252, 200); font-size: 1.2em; font-weight: bold;"><span id="procook">ProCook</span></a> </p>
+                    <h5 class="white-text">Cookerish Recipes</h5>
+                    <p class="grey-text text-lighten-4">For your kitchen essentails visit <a href="https://www.procook.co.uk/" target="_blank" style="color: rgb(251, 252, 200); font-size: 1.2em; font-weight: bold;"><span id="procook">ProCook</span></a> </p>
                 </div>
                 <div class="col l4 s12">
-                  <h5 class="white-text">Connect</h5>
+                    <h5 class="white-text">Connect</h5>
                 </div>
                 <div class="col-12 social padding">
                     <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook" style="color: rgb(247, 247, 183);"></i></a>
@@ -87,14 +87,14 @@
                     <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" style="color: rgb(247, 247, 183);"></i></a>
                     <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube" style="color: rgb(247, 247, 183);"></i></a>
                 </div>
-              </div>
             </div>
-            <div class="footer-copyright">
-              <div class="container">
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
                 &copy; Cookerish Recipes
-              </div>
             </div>
-          </footer>
+        </div>
+    </footer>
               
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

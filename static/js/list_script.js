@@ -21,6 +21,7 @@ function edit_add_tools(event)
         tools_input.setAttribute("style","width:80%");
         tools_input.setAttribute("style","margin-left:20px;");
         document.getElementById('edit_tools_div').append(tools_input);
+        tools_input.focus();
     };
 
 
@@ -46,6 +47,7 @@ function edit_add_ingredient(event)
     ingredient_input.setAttribute("style","width:80%");
     ingredient_input.setAttribute("style","margin-left:20px;");
     document.getElementById('edit_ingredient_div').append(ingredient_input);
+    ingredient_input.focus();
 };        
    
 function add_method(event)
@@ -66,10 +68,12 @@ function edit_add_method(event)
         event.preventDefault();
         var method_input = document.createElement('TEXTAREA');
         method_input.setAttribute('name', 'method');
-        method_input.setAttribute("style","width:80%");
+        method_input.setAttribute("style","width:70%");
         method_input.setAttribute("style","margin-left:20px;");
         document.getElementById('edit_method_div').append(method_input);
-    };     
+        method_input.focus();
+     };     
+
 
     $(".remove_tool").on("click", function(e){
         e.preventDefault();

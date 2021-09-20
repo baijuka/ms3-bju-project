@@ -26,7 +26,7 @@
                       {% endfor %}
                     </select>
                     <label>Food Category</label>
-                  </div>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -41,8 +41,7 @@
                     <input id="prep_time" name="cook_time" minlength="3" maxlength="50" value="{{ recipe.cook_time }}" type="text" class="validate" required>
                     <label for="cook_time">Cook Time</label>
                 </div>
-            </div>
-          
+            </div>   
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-friends prefix light-blue-text text-darken-4"></i>
@@ -96,18 +95,17 @@
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4" style="font-size: x-large;"></i>
                     <label for="method">Method</label>
                     {% for step in recipe.method %}
-                    <div class="method_wrap" style="margin-left: 40px;">
-                        <textarea id="method" name="method" minlength="5"
-                         maxlength="500"  type="text" class="validate" style="width: 90%;">{{ step }}</textarea>
-                        <a href="#" class="remove_method" style="padding-bottom: 15px;">Remove</a>      
-                    </div>
-                        
+                        <div class="method_wrap" style="margin-left: 40px;">
+                            <textarea id="method" name="method" minlength="5"
+                            maxlength="500"  type="text" class="validate" style="width: 90%;">{{ step }}</textarea>
+                            <a href="#" class="remove_method" style="padding-bottom: 15px;">Remove</a>      
+                        </div>                     
                     {% endfor %}
                     <div class="container">
                         <div id="edit_method_div">
                        </div>
                        <button id="btn_method" class="btn blue-grey darken-1 text-white" onClick="edit_add_method(event);" type="button" style="float: right; margin-top: 10px;">Add More</button>
-                   </div
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -134,7 +132,6 @@
                 </div>
             </div>
         </form>
-    </div>
-    
+    </div> 
 
 {% endblock %}
