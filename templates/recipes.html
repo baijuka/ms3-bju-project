@@ -4,10 +4,10 @@
  <!-- Credit: This page has used Code Institute's mini project's code and was modified to fit the purpose of the site   -->
  
   <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#"><img src="../static/images/image1.jpg"></a>
-    <a class="carousel-item" href="#"><img src="../static/images/image2.jpg"></a>
-    <a class="carousel-item" href="#"><img src="../static/images/image3.jpg"></a>
-    <a class="carousel-item" href="#"><img src="../static/images/image4.jpg"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image1.jpg" alt="carousel image"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image2.jpg" alt="carousel image"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image3.jpg" alt="carousel image"></a>
+    <a class="carousel-item" href="#"><img src="../static/images/image4.jpg" alt="carousel image"></a>
   </div>
  
   <h1 style="color: rgb(180, 75, 5); text-align: center; margin-top: 3%; margin-bottom: 2%;">Cookerish recipes of your choice</h1>
@@ -38,9 +38,9 @@
         <div class="row" style="display: block;">
             <div class="col m6"> 
                 {% if recipe.image_source %} 
-                    <img src="{{ recipe.image_source }}" alt="curry image" style="max-width: 100%; max-height: 500px;">
+                    <img src="{{ recipe.image_source }}" alt="recipe image" style="max-width: 100%; max-height: 500px;">
                 {% else %}
-                    <img src="../static/images/image_default.jpg" alt="curry image" style="max-width: 100%; max-height: 500px;">
+                    <img src="../static/images/image_default.jpg" alt="recipe image" style="max-width: 100%; max-height: 500px;">
                 {% endif %}
             </div>
             <div class="col m6">
