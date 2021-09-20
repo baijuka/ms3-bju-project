@@ -111,7 +111,7 @@ Log in | The user can register and log into their own account with personalised 
 Log out | There is a log out functionality on the page which helps prevent other users from accessing the system
 Add recipe | Users can contribute to the site via the add recipe form
 Edit recipe form | Users are able to edit their own recipes. 
-Delete a recipe | Users are abel to delete their own recipes. 
+Delete a recipe | Users are able to delete their own recipes. 
 Search function | Every user of the website is able to search the recipe database by ingredient or recipe name without being logged in.
 Manage Categories | The user with username **'admin'** and password **'password123'** is able to Add, Delete and Edit categories of recipes.  Username **'admin'** was already created and can be logged in using the password **'passwrod123'** for the assessment purpose. 
 
@@ -165,8 +165,8 @@ User Feedback | Users will be able to send their feedback and suggestions about 
 * As a new site user, I want to get inspiration for a recipe to make
     1. The images and cook/prep times within the page provide inspiration to the site user
 * As a new site user, I want to be able to understand the intent of the page
-    1. Upon entering the page, it is clear the site is designed around food and cooking. The carousel image point the user to this
-* As a new site user, I want I want to understand easily how to navigate the page and access the facilities provided
+    1. Upon entering the page, it is clear the site is designed around food and cooking. The carousel images point the user to this
+* As a new site user, I want to understand easily how to navigate the page and access the facilities provided
     1. The navigation bar has clear and easy to understand links. These links are also dynamic to whether the user is signed in or not so they are only seeing the relevant options
 ### **Returning user testing**
 * As a returning site user, I want to be able to log in
