@@ -188,6 +188,10 @@ footer .social a {
     #footer {
         min-height: 25%;
     }
+
+    html,body {
+       overflow-x: hidden;
+   }
 }
 
 @media only screen and (max-width: 300x){
@@ -204,6 +208,10 @@ footer .social a {
         bottom:0;
         width:100%;
      }
+    
+     html,body {
+        overflow-x: hidden;
+    }
 }
 
 @media only screen and (max-width: 769px) {
@@ -229,6 +237,6 @@ footer .social a {
         margin-bottom: 42% !important;
     }
     html,body {
-        overflow: auto;
+        overflow-x: hidden;
     }
 }
