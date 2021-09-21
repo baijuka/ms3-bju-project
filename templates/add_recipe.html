@@ -55,11 +55,10 @@
                 </div>
             </div>
             <div class="row">
-                <!-- <p style="margin-left: 40px; max-width: 90%;">Type the Tool Name in the box and click 'ClICK TO ADD' Button to accept the tool</p> -->
                 <div class="input-field col s12">
                     <i class="fas fa-cut prefix light-blue-text text-darken-4"></i>
-                    <input id="tools_required" minlength="1" maxlength="50" type="text" class="validate">
-                    <label for="tools_required">Tools Required</label>
+                    <input id="tools_required" minlength="1" maxlength="50" type="text" class="validate" style="height: 50px;">
+                    <label for="tools_required">Type your tool and click 'Click to Add' (Repeat for more)</label>
                     <button id="btn_tools" class="btn blue-grey darken-1 text-white" onClick="add_tools(event);" type="button" style="float: right;">Click to Add</button>
                     <div class="container">
                          <div id="tools_div">
@@ -70,8 +69,8 @@
              <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
-                        <input id="ingredients" minlength="1" maxlength="50" type="text" class="validate">
-                        <label for="ingredients">Ingredients</label>
+                        <input id="ingredients" minlength="1" maxlength="50" type="text" class="validate" style="height: 50px;">
+                        <label for="ingredients">Type ingredient and click 'Click to Add' (Repeat for more)</label>
                         <button id="btn_ingredient" class="btn blue-grey darken-1 text-white" onClick="add_ingredient(event);" type="button" style="float: right;">Click to Add</button>
                         <div class="container">
                             <div id="ingredients_div">
@@ -84,7 +83,7 @@
                     <i class="fas fa-mortar-pestle prefix light-blue-text text-darken-4"></i>
                     <textarea id="method" minlength="5"
                         maxlength="500" class="materialize-textarea"></textarea>
-                    <label for="method">Method</label>
+                    <label for="method">Type method step and click 'Click to Add' (Repeat for more)</label>
                     <button id="btn_method" class="btn blue-grey darken-1 text-white" onClick="add_method(event);" type="button" style="float: right;">Click to Add</button>
                     <div class="container">
                         <div id="method_div">
