@@ -110,8 +110,8 @@ Feature | Details
 Log in | The user can register and log into their own account with personalised features
 Log out | There is a log out functionality on the page which helps prevent other users from accessing the system
 Add recipe | Users can contribute to the site via the add recipe form
-Edit recipe form | Users are able to edit their own recipes. 
-Delete a recipe | Users are able to delete their own recipes. 
+Edit recipe form | Users are able to edit their own recipes in the Profile page. 
+Delete a recipe | Users are able to delete their own recipes in the Profile page. 
 Search function | Every user of the website is able to search the recipe database by ingredient or recipe name without being logged in.
 Manage Categories | The user with username **'admin'** and password **'password123'** is able to Add, Delete and Edit categories of recipes.  Username **'admin'** was already created and can be logged in using the password **'passwrod123'** for the assessment purpose. 
 
@@ -132,6 +132,7 @@ User Feedback | Users will be able to send their feedback and suggestions about 
     - Fix - Issue fixed by setting the 'max-with: 70%;' in the media query.
 * At the moment there is only one user with username 'admin' has the right to manage categories.
 * Update and Cancel Buttons do not scale down in size on small device, which was found to be a Materialize issue.
+* Slight varion in size of method input box when you add new steps in the Edit recipe page on some small devices.
 
 # <a name="tech"></a> Technologies Used
 

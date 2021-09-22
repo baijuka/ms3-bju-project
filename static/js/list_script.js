@@ -68,8 +68,9 @@ function edit_add_method(event)
         event.preventDefault();
         var method_input = document.createElement('TEXTAREA');
         method_input.setAttribute('name', 'method');
-        method_input.setAttribute("style","width:70%");
+        method_input.setAttribute("style","max-width:70%");
         method_input.setAttribute("style","margin-left:20px;");
+        method_input.setAttribute("style","padding-left:3px;");
         document.getElementById('edit_method_div').append(method_input);
         method_input.focus();
      };     
