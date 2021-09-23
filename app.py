@@ -193,7 +193,6 @@ def edit_userInfo(username):
         flash("User details successfully updated")
         return redirect(url_for('profile', username=username))
 
-    # username = session['user']
     user = mongo.db.users.find_one({'username': username})
     return render_template('edit_user_info.html', user=user)
 
@@ -253,4 +252,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
