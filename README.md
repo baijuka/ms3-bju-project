@@ -113,8 +113,7 @@ Add recipe | Users can contribute to the site via the add recipe form
 Edit recipe form | Users are able to edit their own recipes in the Profile page. 
 Delete a recipe | Users are able to delete their own recipes in the Profile page. 
 Search function | Every user of the website is able to search the recipe database by ingredient or recipe name without being logged in.
-Manage Categories | The user with username **'admin'** and password **'password123'** is able to Add, Delete and Edit categories of recipes.  Username **'admin'** was already created and can be logged in using the password **'passwrod123'** for the assessment purpose. 
-
+Manage Categories | The user with 'admin' status is able to Add, Delete and Edit categories of recipes.  
 
 ## <a name="left-to"></a> Features left to implement
 Feature | Details
