@@ -228,7 +228,7 @@ User Feedback | Users will be able to send their feedback and suggestions about 
 1. Push the file to GitHub using the git commit and git push functions
 1. Refresh your GitHub repository and click the 'Settings' tab
 1. Scroll to the GitHub Pages section and select a publishing source
-1. Click 'Save'
+1. Click 'Save'.
 1. Click the URL created within the Settings - GitHub Pages section
 
 **To clone the repository for local deployment:** 
